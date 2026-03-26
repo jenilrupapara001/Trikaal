@@ -6,11 +6,11 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 // Validate required environment variables
-if (!process.env.JWT_SECRET) {
+if (!process.env.JWT_SECRET && process.env.NODE_ENV !== 'development') {
     console.error('FATAL: JWT_SECRET is not defined in .env file');
     process.exit(1);
 }
-if (!process.env.MONGODB_URI) {
+if (!process.env.MONGODB_URI && process.env.NODE_ENV !== 'development') {
     console.error('FATAL: MONGODB_URI is not defined in .env file');
     process.exit(1);
 }
@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
     res.send('Trikaal API is running...');
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
