@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trikaal | Vastu Consultation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#f0c040",
+              "primary": "#e6c364",
+              "outline-variant": "#4d4637",
+              "on-tertiary-fixed-variant": "#5a4400",
+              "on-secondary-fixed": "#2a064b",
+              "on-surface-variant": "#d0c5b2",
+              "surface-container-highest": "#442959",
+              "on-tertiary-container": "#513d00",
+              "surface-dim": "#200436",
+              "on-tertiary": "#3e2e00",
+              "secondary-fixed": "#efdbff",
+              "on-background": "#f2daff",
+              "on-surface": "#f2daff",
+              "on-primary-fixed-variant": "#584400",
+              "on-primary-fixed": "#241a00",
+              "surface-container-high": "#381e4e",
+              "on-primary-container": "#503d00",
+              "surface-container-lowest": "#1a0030",
+              "inverse-on-surface": "#3f2455",
+              "surface-tint": "#e6c364",
+              "inverse-primary": "#755b00",
+              "surface-container-low": "#290e3e",
+              "secondary": "#dcb8ff",
+              "on-tertiary-fixed": "#251a00",
+              "primary-container": "#c9a84c",
+              "outline": "#99907e",
+              "error-container": "#93000a",
+              "tertiary-container": "#d2a525",
+              "primary-fixed": "#ffe08f",
+              "tertiary-fixed": "#ffdf97",
+              "tertiary-fixed-dim": "#f0c040",
+              "on-secondary-container": "#cfa9f4",
+              "inverse-surface": "#f2daff",
+              "surface-container": "#2d1342",
+              "background": "#200436",
+              "secondary-container": "#5a3a7c",
+              "on-error": "#690005",
+              "secondary-fixed-dim": "#dcb8ff",
+              "surface": "#200436",
+              "surface-bright": "#482d5e",
+              "on-error-container": "#ffdad6",
+              "on-secondary-fixed-variant": "#583879",
+              "surface-variant": "#442959",
+              "primary-fixed-dim": "#e6c364",
+              "on-secondary": "#402061",
+              "on-primary": "#3d2e00",
+              "error": "#ffb4ab"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #200436;
+            color: #f2daff;
+            font-family: 'Manrope', sans-serif;
+        }
+        .shimmer-gold {
+            background: linear-gradient(135deg, #e6c364 0%, #c9a84c 50%, #e6c364 100%);
+            background-size: 200% auto;
+        }
+        .glass-panel {
+            background: rgba(68, 41, 89, 0.4);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="selection:bg-primary selection:text-on-primary overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-[#200436]/80 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-[0px_20px_40px_rgba(13,0,24,0.6)] no-border bg-gradient-to-b from-[#1a0030] to-transparent">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-full">
+<div class="text-2xl font-bold text-[#e6c364] font-['Noto_Serif'] italic">Trikaal</div>
+<div class="hidden md:flex items-center gap-8 font-['Noto_Serif'] text-[#d0c5b2] tracking-wide">
+<a class="text-[#d0c5b2] hover:text-[#e6c364] transition-colors hover:scale-105 transition-transform duration-300" href="#">Home</a>
+<a class="text-[#e6c364] border-b-2 border-[#e6c364] pb-1 hover:scale-105 transition-transform duration-300" href="#">Services</a>
+<a class="text-[#d0c5b2] hover:text-[#e6c364] transition-colors hover:scale-105 transition-transform duration-300" href="#">About</a>
+<a class="text-[#d0c5b2] hover:text-[#e6c364] transition-colors hover:scale-105 transition-transform duration-300" href="#">Contact</a>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2 rounded-full font-bold hover:scale-105 transition-all active:opacity-80 active:scale-95">
+                Book Consultation
+            </button>
+</div>
+</nav>
+<main class="relative min-h-screen pb-24">
+<!-- Section Header -->
+<header class="relative pt-20 pb-16 px-6 text-center overflow-hidden">
+<!-- Decorative Bleeding Mandala -->
+<div class="absolute -top-24 -right-24 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[400px] text-primary" style="font-variation-settings: 'wght' 100;">settings_suggest</span>
+</div>
+<div class="relative z-10 flex flex-col items-center max-w-4xl mx-auto">
+<span class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase mb-6 shadow-lg shadow-black/20">
+                    Most Personalized Service
+                </span>
+<h1 class="font-headline text-5xl md:text-7xl font-bold text-primary mb-6 leading-tight tracking-tight">
+                    Trikaal Vastu Consultation
+                </h1>
+<p class="font-body text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                    Personalizing universal energy flow as per <span class="text-primary italic font-headline">YOUR</span> star alignment.
+                </p>
+</div>
+</header>
+<!-- Main Content Grid -->
+<section class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+<!-- Left: On-Site Card -->
+<div class="group relative bg-surface-container-high rounded-xl p-8 border border-primary/10 hover:border-primary/40 transition-all duration-500 hover:shadow-2xl hover:shadow-black/60">
+<div class="flex justify-between items-start mb-10">
+<div>
+<span class="material-symbols-outlined text-4xl text-primary mb-4 block" data-icon="location_on">location_on</span>
+<h3 class="font-headline text-3xl font-bold text-on-surface">On-Site Analysis</h3>
+</div>
+<div class="text-right">
+<p class="text-xs text-on-surface-variant uppercase tracking-widest mb-1">Starts From</p>
+<p class="font-headline text-2xl text-primary">AED 2,500</p>
+</div>
+</div>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">auto_awesome</span>
+                        Physical energy mapping &amp; structure walk-through
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">auto_awesome</span>
+                        Personalized remedial placement markers
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">auto_awesome</span>
+                        Detailed resident chart synchronization
+                    </li>
+</ul>
+<button class="w-full py-4 rounded-full border border-primary/20 text-primary font-bold hover:bg-primary hover:text-on-primary transition-all duration-300">
+                    Inquire for On-Site
+                </button>
+</div>
+<!-- Right: Online Card -->
+<div class="group relative bg-surface-container-high rounded-xl p-8 border border-primary/10 hover:border-primary/40 transition-all duration-500 hover:shadow-2xl hover:shadow-black/60">
+<div class="flex justify-between items-start mb-10">
+<div>
+<span class="material-symbols-outlined text-4xl text-primary mb-4 block" data-icon="public">public</span>
+<h3 class="font-headline text-3xl font-bold text-on-surface">Online Digital Audit</h3>
+</div>
+<div class="text-right">
+<p class="text-xs text-on-surface-variant uppercase tracking-widest mb-1">Starts From</p>
+<p class="font-headline text-2xl text-primary">AED 950</p>
+</div>
+</div>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">auto_awesome</span>
+                        Floor plan analysis via digital blueprint
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">auto_awesome</span>
+                        Video call consultation with expert
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">auto_awesome</span>
+                        PDF Remedial report for self-implementation
+                    </li>
+</ul>
+<button class="w-full py-4 rounded-full border border-primary/20 text-primary font-bold hover:bg-primary hover:text-on-primary transition-all duration-300">
+                    Book Online Session
+                </button>
+</div>
+<!-- Full Width Requirement Section -->
+<div class="lg:col-span-2 mt-8 glass-panel rounded-xl p-10 border border-primary/5 relative overflow-hidden">
+<!-- Background Decorative Element -->
+<div class="absolute right-0 top-0 h-full w-1/3 opacity-20 flex items-center justify-center pointer-events-none">
+<span class="material-symbols-outlined text-[300px] text-primary" data-icon="architecture">architecture</span>
+</div>
+<div class="relative z-10 max-w-3xl">
+<h4 class="font-headline text-2xl text-on-surface mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">id_card</span>
+                        Resident Birth Details Required
+                    </h4>
+<p class="text-on-surface-variant mb-8 leading-relaxed">
+                        To synchronize the space with its inhabitants, we require the precise birth details (Date, Time, Place) of all primary residents or business owners for our Trikaal Astrological-Vastu Overlay.
+                    </p>
+<!-- Highlight Box -->
+<div class="bg-primary p-6 rounded-lg text-on-primary shadow-xl flex items-start gap-4 animate-pulse-subtle">
+<span class="material-symbols-outlined text-3xl shrink-0" data-icon="warning">warning</span>
+<div>
+<p class="font-bold text-lg mb-1">Please note: All details must be accurate.</p>
+<p class="opacity-90 font-medium">AED 150 charged per person's birth chart for analysis.</p>
+</div>
+</div>
+</div>
+<!-- Overlapping Visual Ornament -->
+<div class="mt-12 flex justify-center gap-4 opacity-40">
+<img class="w-48 h-48 object-contain" data-alt="Traditional gold kundali birth chart outline" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJZeb81mVPaJEy4ESPuAIQzmy3v2mWpUvWVFvD-wIldY_KiDDSkVzo7EMgGWesqKX549_1IxvHEI7g_ueJpGZH9eD-tw-v5d1toS_Cak6OuipodKAUrYw35bWAAV5AhkH3-eDqU8IJeiP22qpMRXFdxxwfVIK-_v5c0Eo-kCC0weGP1X0Qh6890arLY1rQxrdUqKpAURzGsPtoxxgovJQjK7DWU88Mc7Sq7hw97D958Vuj-XWWs0NOMfmCJGNbRXgpV4mQIBVMNEv7"/>
+<img class="w-48 h-48 object-contain -ml-16 mt-8" data-alt="Architectural gold floor plan wireframe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw9yvucBRrVBCdcx7AeHK1kHzObeDkYmgyschlsMwgIl2wQcus2iEcDHNQiA8x_qLRI3R7IcUfaRTF-0rqifVTyV9QrWATCyMDen5Osooe4UykU4BErVNDG7yvxNTXjetRH4AruGBgVS6KKJKpUe8cWobpXQsc8bIzjMGYG3bI97sEwCR1ff9GuWKZvjzA5T8VP30emVtSBxerqyy58ZDB5lygFIkm8vcZ7JzIkJAvfHMCX6qm_9QGvQEgTSegjW2VbwQwMrGLCT9_"/>
+</div>
+</div>
+</section>
+<!-- Action Floating Bubble (Suppressed as per rules for Details page, but visual anchor remains) -->
+<div class="fixed bottom-8 right-8 flex flex-col items-center gap-4 z-40">
+<div class="bg-surface-container-highest p-3 rounded-full shadow-2xl border border-primary/20 backdrop-blur-md">
+<span class="material-symbols-outlined text-primary" data-icon="chat_bubble">chat_bubble</span>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1a0030] full-width relative overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 w-full font-['Manrope'] text-[#d0c5b2] text-sm">
+<div class="col-span-1">
+<div class="text-3xl font-bold text-[#e6c364] font-['Noto_Serif'] mb-4">Trikaal</div>
+<p class="opacity-70 leading-relaxed max-w-xs">Connecting ancient Vedic wisdom with contemporary living spaces through celestial insights.</p>
+</div>
+<div class="col-span-1">
+<h5 class="text-[#e6c364] font-bold uppercase tracking-widest mb-6">Quick Access</h5>
+<ul class="space-y-4">
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Privacy Policy</a></li>
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h5 class="text-[#e6c364] font-bold uppercase tracking-widest mb-6">Celestial Guide</h5>
+<ul class="space-y-4">
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Consultation Guide</a></li>
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Vedic Wisdom</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h5 class="text-[#e6c364] font-bold uppercase tracking-widest mb-6">Connect</h5>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#e6c364] cursor-pointer hover:shadow-[0_0_15px_#e6c364] rounded-full p-2 transition-all">public</span>
+<span class="material-symbols-outlined text-[#e6c364] cursor-pointer hover:shadow-[0_0_15px_#e6c364] rounded-full p-2 transition-all">mail</span>
+<span class="material-symbols-outlined text-[#e6c364] cursor-pointer hover:shadow-[0_0_15px_#e6c364] rounded-full p-2 transition-all">location_on</span>
+</div>
+</div>
+</div>
+<div class="text-center py-8 border-t border-primary/5 text-xs opacity-50">
+            © 2024 Trikaal Celestial Archive. All Sacred Rights Reserved.
+        </div>
+</footer>
+</body></html>

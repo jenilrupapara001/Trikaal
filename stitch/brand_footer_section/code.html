@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#f0c040",
+              "primary": "#e6c364",
+              "outline-variant": "#4d4637",
+              "on-tertiary-fixed-variant": "#5a4400",
+              "on-secondary-fixed": "#2a064b",
+              "on-surface-variant": "#d0c5b2",
+              "surface-container-highest": "#442959",
+              "on-tertiary-container": "#513d00",
+              "surface-dim": "#200436",
+              "on-tertiary": "#3e2e00",
+              "secondary-fixed": "#efdbff",
+              "on-background": "#f2daff",
+              "on-surface": "#f2daff",
+              "on-primary-fixed-variant": "#584400",
+              "on-primary-fixed": "#241a00",
+              "surface-container-high": "#381e4e",
+              "on-primary-container": "#503d00",
+              "surface-container-lowest": "#1a0030",
+              "inverse-on-surface": "#3f2455",
+              "surface-tint": "#e6c364",
+              "inverse-primary": "#755b00",
+              "surface-container-low": "#290e3e",
+              "secondary": "#dcb8ff",
+              "on-tertiary-fixed": "#251a00",
+              "primary-container": "#c9a84c",
+              "outline": "#99907e",
+              "error-container": "#93000a",
+              "tertiary-container": "#d2a525",
+              "primary-fixed": "#ffe08f",
+              "tertiary-fixed": "#ffdf97",
+              "tertiary-fixed-dim": "#f0c040",
+              "on-secondary-container": "#cfa9f4",
+              "inverse-surface": "#f2daff",
+              "surface-container": "#2d1342",
+              "background": "#200436",
+              "secondary-container": "#5a3a7c",
+              "on-error": "#690005",
+              "secondary-fixed-dim": "#dcb8ff",
+              "surface": "#200436",
+              "surface-bright": "#482d5e",
+              "on-error-container": "#ffdad6",
+              "on-secondary-fixed-variant": "#583879",
+              "surface-variant": "#442959",
+              "primary-fixed-dim": "#e6c364",
+              "on-secondary": "#402061",
+              "on-primary": "#3d2e00",
+              "error": "#ffb4ab"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .yantric-pattern {
+            background-image: radial-gradient(circle at center, rgba(230, 195, 100, 0.05) 0%, transparent 70%), 
+                              url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l5 25h25l-20 15 7 20-22-13-22 13 7-20-20-15h25z' fill='%23e6c364' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30 selection:text-primary">
+<!-- TopNavBar -->
+<nav class="docked full-width top-0 sticky z-50 bg-[#200436]/80 backdrop-blur-xl no-border bg-gradient-to-b from-[#1a0030] to-transparent shadow-[0px_20px_40px_rgba(13,0,24,0.6)]">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-full">
+<div class="text-2xl font-bold text-[#e6c364] font-['Noto_Serif'] italic hover:scale-105 transition-transform duration-300 cursor-pointer">
+                Trikaal
+            </div>
+<div class="hidden md:flex items-center gap-8 font-['Noto_Serif'] text-[#d0c5b2] tracking-wide">
+<a class="text-[#d0c5b2] hover:text-[#e6c364] transition-colors hover:scale-105 transition-transform duration-300" href="#">Home</a>
+<a class="text-[#d0c5b2] hover:text-[#e6c364] transition-colors hover:scale-105 transition-transform duration-300" href="#">Services</a>
+<a class="text-[#d0c5b2] hover:text-[#e6c364] transition-colors hover:scale-105 transition-transform duration-300" href="#">About</a>
+<a class="text-[#d0c5b2] hover:text-[#e6c364] transition-colors hover:scale-105 transition-transform duration-300" href="#">Contact</a>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-semibold px-6 py-2 rounded-full hover:scale-105 transition-transform duration-300 shadow-lg">
+                Book Consultation
+            </button>
+</div>
+</nav>
+<main class="min-h-screen flex flex-col items-center justify-center p-8 space-y-12">
+<!-- Content Spacer for Visualization -->
+<section class="max-w-4xl text-center space-y-6">
+<h1 class="font-headline text-5xl md:text-7xl text-primary font-bold tracking-tight">Ancient Wisdom,<br/>Modern Guidance.</h1>
+<p class="text-on-surface-variant text-lg max-w-2xl mx-auto leading-relaxed">
+                Unlock the celestial blueprints of your destiny. At Trikaal, we weave the timeless threads of Vedic science into the fabric of contemporary life.
+            </p>
+</section>
+<!-- Golden Mandala Graphic -->
+<div class="relative w-64 h-64 opacity-20 pointer-events-none">
+<div class="absolute inset-0 border-2 border-primary rounded-full animate-[spin_20s_linear_infinite]"></div>
+<div class="absolute inset-4 border-2 border-primary/50 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-6xl" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="full-width relative overflow-hidden bg-[#1a0030] yantric-pattern border-t border-primary/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 w-full relative z-10">
+<!-- Column 1: Brand -->
+<div class="space-y-6">
+<div class="text-3xl font-bold text-[#e6c364] font-['Noto_Serif'] mb-4">Trikaal</div>
+<p class="font-label text-sm uppercase tracking-[0.2em] text-primary/80">A Modern Approach to Vedic Science</p>
+<div class="italic font-headline text-on-surface-variant/80 text-sm leading-loose border-l-2 border-primary/30 pl-4 py-1">
+                    "Om Sahana Vavatu<br/>Sahanau Bhunaktu<br/>Sahaveeryam Karavavahai"
+                </div>
+</div>
+<!-- Column 2: Quick Links -->
+<div class="space-y-6">
+<h4 class="font-headline text-primary text-lg font-semibold tracking-wide">Quick Links</h4>
+<ul class="space-y-4 font-['Manrope'] text-[#d0c5b2] text-sm">
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Home</a></li>
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Services</a></li>
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">About</a></li>
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block font-semibold" href="#">Book Now</a></li>
+</ul>
+</div>
+<!-- Column 3: Services -->
+<div class="space-y-6">
+<h4 class="font-headline text-primary text-lg font-semibold tracking-wide">Services</h4>
+<ul class="space-y-4 font-['Manrope'] text-[#d0c5b2] text-sm">
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Trikaal Astrology</a></li>
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Vastu Shastra</a></li>
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Trikaal Vastu</a></li>
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Gemstone Consultancy</a></li>
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Vedic Numerology</a></li>
+</ul>
+</div>
+<!-- Column 4: Contact -->
+<div class="space-y-6">
+<h4 class="font-headline text-primary text-lg font-semibold tracking-wide">Contact</h4>
+<div class="space-y-4 font-['Manrope'] text-[#d0c5b2] text-sm">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">translate</span>
+<p class="text-on-surface-variant/70">English, Hindi, Sanskrit, Marathi</p>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">public</span>
+<p class="text-on-surface-variant/70">India, UAE, USA, Worldwide</p>
+</div>
+<div class="bg-surface-container-high/50 p-4 rounded-lg border border-primary/5">
+<p class="text-xs italic text-on-surface-variant/60 leading-relaxed">
+<span class="font-bold text-primary/80">Confidentiality Note:</span> All consultations are strictly private and protected under celestial privacy standards.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Divider Line -->
+<div class="mx-12 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+<!-- Bottom Bar -->
+<div class="px-12 py-8 flex flex-col md:flex-row justify-between items-center gap-6 text-on-surface-variant/60 font-['Manrope'] text-sm">
+<div class="order-2 md:order-1">
+                © 2025 Trikaal. All Sacred Rights Reserved.
+            </div>
+<div class="order-1 md:order-2 flex items-center gap-6">
+<a class="group transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-primary/60 group-hover:text-primary group-hover:drop-shadow-[0_0_8px_rgba(230,195,100,0.6)]">public</span>
+</a>
+<a class="group transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-primary/60 group-hover:text-primary group-hover:drop-shadow-[0_0_8px_rgba(230,195,100,0.6)]">chat</span>
+</a>
+<a class="group transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-primary/60 group-hover:text-primary group-hover:drop-shadow-[0_0_8px_rgba(230,195,100,0.6)]">smart_display</span>
+</a>
+</div>
+<div class="order-3 flex items-center gap-1 italic text-primary/50">
+                Made with <span class="text-primary not-italic">✨</span> and Vedic wisdom
+            </div>
+</div>
+<!-- Subtle Glow Orbs -->
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-primary/5 rounded-full blur-[100px]"></div>
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-secondary/5 rounded-full blur-[100px]"></div>
+</footer>
+</body></html>

@@ -1,68 +1,68 @@
-import User from '../models/User.js';
-import { generateToken, generateRefreshToken } from '../utils/generateToken.js';
+const jwt = require('jsonwebtoken');
+const User = require('../models/User');
 
-// @desc    Login user
-// @route   POST /api/auth/login
-// @access  Public
-export const login = async (req, res, next) => {
+exports.register = async (req, res) => {
+    try {
+        const { name, email, password } = req.body;
+
+        // Input validation
+        if (!name || name.trim().length < 2) {
+            return res.status(400).json({ message: 'Name must be at least 2 characters' });
+        }
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            return res.status(400).json({ message: 'Please provide a valid email' });
+        }
+        if (!password || password.length < 6) {
+            return res.status(400).json({ message: 'Password must be at least 6 characters' });
+        }
+
+        let user = await User.findOne({ email: email.toLowerCase() });
+        if (user) return res.status(400).json({ message: 'User already exists' });
+
+        user = new User({ name: name.trim(), email: email.toLowerCase(), password });
+        await user.save();
+
+        const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '7d' });
+        res.status(201).json({ token, user: { id: user._id, name, email, role: user.role } });
+    } catch (err) {
+        res.status(500).json({ message: 'Server error', error: err.message });
+    }
+};
+
+exports.login = async (req, res) => {
     try {
         const { email, password } = req.body;
 
-        const user = await User.findOne({ email }).select('+password');
-
-        if (!user || !(await user.comparePassword(password))) {
-            return res.status(401).json({
-                success: false,
-                message: 'Invalid email or password',
-            });
+        // Input validation
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            return res.status(400).json({ message: 'Please provide a valid email' });
+        }
+        if (!password) {
+            return res.status(400).json({ message: 'Password is required' });
         }
 
-        const accessToken = generateToken(user._id);
-        const refreshToken = generateRefreshToken(user._id);
+        const user = await User.findOne({ email: email.toLowerCase() });
+        if (!user) {
+            return res.status(400).json({ message: 'Invalid credentials' });
+        }
 
-        res.json({
-            success: true,
-            accessToken,
-            refreshToken,
-            user: {
-                id: user._id,
-                name: user.name,
-                email: user.email,
-                role: user.role,
-            },
-        });
-    } catch (error) {
-        next(error);
+        const isMatch = await user.comparePassword(password);
+        if (!isMatch) {
+            return res.status(400).json({ message: 'Invalid credentials' });
+        }
+
+        const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '7d' });
+        res.json({ token, user: { id: user._id, name: user.name, email: user.email, role: user.role } });
+    } catch (err) {
+        res.status(500).json({ message: 'Server error', error: err.message });
     }
 };
 
-// @desc    Get current user
-// @route   GET /api/auth/me
-// @access  Private
-export const getMe = async (req, res, next) => {
+exports.getMe = async (req, res) => {
     try {
-        const user = await User.findById(req.user.id);
-
-        res.json({
-            success: true,
-            user: {
-                id: user._id,
-                name: user.name,
-                email: user.email,
-                role: user.role,
-            },
-        });
-    } catch (error) {
-        next(error);
+        const user = await User.findById(req.user.id).select('-password');
+        res.json(user);
+    } catch (err) {
+        res.status(500).json({ message: 'Server error' });
     }
-};
-
-// @desc    Logout user
-// @route   POST /api/auth/logout
-// @access  Private
-export const logout = async (req, res, next) => {
-    res.json({
-        success: true,
-        message: 'Logged out successfully',
-    });
 };

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trikaal Admin - Vedic Wisdom Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#200436",
+                        "secondary-fixed": "#efdbff",
+                        "primary-fixed": "#ffe08f",
+                        "inverse-surface": "#f2daff",
+                        "surface-tint": "#e6c364",
+                        "tertiary": "#f0c040",
+                        "on-secondary-fixed": "#2a064b",
+                        "on-tertiary-fixed": "#251a00",
+                        "on-secondary": "#402061",
+                        "surface": "#200436",
+                        "primary": "#e6c364",
+                        "error": "#ffb4ab",
+                        "secondary-fixed-dim": "#dcb8ff",
+                        "on-secondary-fixed-variant": "#583879",
+                        "tertiary-fixed": "#ffdf97",
+                        "tertiary-container": "#d2a525",
+                        "outline": "#99907e",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "on-secondary-container": "#cfa9f4",
+                        "surface-bright": "#482d5e",
+                        "on-primary": "#3d2e00",
+                        "inverse-on-surface": "#3f2455",
+                        "surface-container-highest": "#442959",
+                        "secondary-container": "#5a3a7c",
+                        "on-tertiary-fixed-variant": "#5a4400",
+                        "primary-container": "#c9a84c",
+                        "on-background": "#f2daff",
+                        "surface-container": "#2d1342",
+                        "on-surface-variant": "#d0c5b2",
+                        "secondary": "#dcb8ff",
+                        "on-surface": "#f2daff",
+                        "surface-container-lowest": "#1a0030",
+                        "surface-dim": "#200436",
+                        "on-tertiary-container": "#513d00",
+                        "surface-container-low": "#290e3e",
+                        "on-primary-fixed": "#241a00",
+                        "outline-variant": "#4d4637",
+                        "on-primary-fixed-variant": "#584400",
+                        "surface-container-high": "#381e4e",
+                        "error-container": "#93000a",
+                        "tertiary-fixed-dim": "#f0c040",
+                        "on-tertiary": "#3e2e00",
+                        "surface-variant": "#442959",
+                        "primary-fixed-dim": "#e6c364",
+                        "on-primary-container": "#503d00",
+                        "inverse-primary": "#755b00"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(68, 41, 89, 0.4);
+            backdrop-filter: blur(20px);
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(230, 195, 100, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body min-h-screen">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r border-[#e6c364]/10 bg-[#1a0030] dark:bg-[#1a0030] shadow-[20px_0_40px_rgba(13,0,24,0.6)] flex flex-col py-6 z-50">
+<div class="px-6 mb-10">
+<h1 class="text-2xl font-serif font-bold text-[#e6c364] tracking-tight">Trikaal Admin</h1>
+<p class="text-xs font-label uppercase tracking-[0.2em] text-on-surface-variant/60 mt-1">The Cosmic Oracle</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-[#d0c5b2]/70 hover:bg-[#442959]/30 hover:text-[#e6c364] transition-colors duration-300" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium text-sm tracking-wide">Overview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#d0c5b2]/70 hover:bg-[#442959]/30 hover:text-[#e6c364] transition-colors duration-300" href="#">
+<span class="material-symbols-outlined">event_note</span>
+<span class="font-medium text-sm tracking-wide">Consultations</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#d0c5b2]/70 hover:bg-[#442959]/30 hover:text-[#e6c364] transition-colors duration-300" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-medium text-sm tracking-wide">Clients</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-[#e6c364]/10 text-[#e6c364] border-r-4 border-[#e6c364] font-bold" href="#">
+<span class="material-symbols-outlined">edit_note</span>
+<span class="font-medium text-sm tracking-wide">Blog</span>
+</a>
+</nav>
+<div class="px-4 mt-auto space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-[#d0c5b2]/70 hover:bg-[#442959]/30 hover:text-[#e6c364] transition-colors duration-300" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium text-sm tracking-wide">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#d0c5b2]/70 hover:bg-[#442959]/30 hover:text-[#e6c364] transition-colors duration-300" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-medium text-sm tracking-wide">Support</span>
+</a>
+<div class="pt-6 mt-6 border-t border-[#e6c364]/10">
+<div class="flex items-center gap-3 px-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center border border-primary/20 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Admin User Avatar Portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeE_d1EnwfHTPHLcJL_c_h5KxfA4TpYCxm-jt2DeeRMxkwxfYjjbVL93OdpuuBbiDomCcdy1X8VD6bxutKyRgRcSpUlT-TAvTsDwllmHLNr3M7B5LIlhs0zOe2FrQSix0ammsPiuM9fYo8bz505nrdKXR-7B8qqIq6RQNn9QiEezyDTUUcBBTEZt2yYeOSThq5r5xpzk38Y7iNElbxNJNG0okX0m_WirWPBUfWNvXgeYZgUftrEr_bRdJ4kRMLUN9iQ73HfxKUKIb5"/>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Acharya V.</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Head Oracle</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-[#200436]/80 backdrop-blur-xl flex justify-between items-center px-8 ml-64">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-full py-2 pl-10 pr-4 text-sm text-on-surface placeholder:text-on-surface-variant/40 focus:ring-1 focus:ring-primary/30 transition-all duration-200" placeholder="Search archives..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<div class="h-6 w-[1px] bg-outline-variant/30"></div>
+<span class="text-sm font-medium text-primary">Admin Profile</span>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 pt-24 px-8 pb-12">
+<!-- Header Section -->
+<div class="flex justify-between items-end mb-10">
+<div>
+<span class="label-sm uppercase tracking-[0.3em] text-primary font-bold text-xs mb-2 block">Content Manager</span>
+<h2 class="font-headline text-4xl font-bold text-primary-fixed leading-tight tracking-tight">Vedic Wisdom Archive</h2>
+</div>
+<button class="flex items-center gap-2 bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-3 rounded-full font-bold shadow-lg hover:scale-105 active:scale-95 transition-all duration-300">
+<span class="material-symbols-outlined">add_circle</span>
+                New Consultation
+            </button>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<!-- Left Column: Blog Grid & Filters -->
+<div class="col-span-12 lg:col-span-8 space-y-8">
+<!-- Tabs -->
+<div class="flex items-center gap-8 border-b border-outline-variant/20">
+<button class="pb-4 text-primary font-bold border-b-2 border-primary relative">
+                        Published
+                        <span class="absolute -top-1 -right-4 bg-primary/20 text-primary text-[10px] px-1.5 py-0.5 rounded-full">24</span>
+</button>
+<button class="pb-4 text-on-surface-variant hover:text-on-surface transition-colors">
+                        Drafts
+                        <span class="ml-1 opacity-50 text-[10px]">08</span>
+</button>
+<button class="pb-4 text-on-surface-variant hover:text-on-surface transition-colors">Scheduled</button>
+</div>
+<!-- Blog Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Post 1 -->
+<div class="group bg-surface-container-high rounded-lg overflow-hidden border border-primary/5 hover:border-primary/40 transition-all duration-500">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Ethereal cosmic galaxy background with nebula" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD0nOb7FMyfOawgCxmdE0t-YtBGn6MdepuS65KfAgFWEu0Ex2iVRj3EKPTJtjA0Sn3VhXtXXH-AKkw3nnc1DJrmPUrJ_cLRwIr9_-wHx99sGT3vdTcknXPHr9dEoIey8pZaJVtSb07R5YwtfhanNuR99qFKNPDqnp8szWCHSE0RNIZWKmn6Bn5bhatfIMECzRGbJkgNqDvCy04I3j54yoFC1VVVta_VFL2J69--ijC3C1lKct6VJ4m10r1iSU2oUvHO5aYjhHXSxbV"/>
+<div class="absolute top-4 left-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-full border border-primary/20">
+<span class="text-[10px] font-bold text-primary tracking-widest uppercase">Astrology</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-on-surface group-hover:text-primary transition-colors">Saturn's Transit: Finding Your Karmic Path</h3>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+<p class="text-sm text-on-surface-variant/80 line-clamp-2 mb-6">Explore the profound impact of Shani Dev's movement through the 12th house and what it means for spiritual growth.</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<div class="flex gap-4">
+<div class="flex items-center gap-1.5 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">visibility</span>
+                                        12.4k
+                                    </div>
+<div class="flex items-center gap-1.5 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">share</span>
+                                        892
+                                    </div>
+</div>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant/40">24 Oct, 2023</span>
+</div>
+</div>
+</div>
+<!-- Post 2 -->
+<div class="group bg-surface-container-high rounded-lg overflow-hidden border border-primary/5 hover:border-primary/40 transition-all duration-500">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Traditional Indian Vedic symbols on textured paper" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvRHumSwmzcByVi8ulybF0XgV7R8_NSt179fNBNemup_XcSlk3sHKGUxY5xhWVXlGd1bsqyS89GiaJkZFVYpvSSVmKwDpNXUSu0btIJw4Z8QJ3P2gUFCU2MqqGEIKXXNnQjjIQ0rABe4FJ4dDjfbEdL8xiV1O4991sVC59nhh2Dc46z81z6H5OBgIqlH3rUSyevFi4Oc0ycxJAhyh_CT1Eb6enCtAGJzMh6cspvoENgein4UiulLd5DGmli78-CV_S4p2QmKhjIJzx"/>
+<div class="absolute top-4 left-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-full border border-primary/20">
+<span class="text-[10px] font-bold text-primary tracking-widest uppercase">Rituals</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-on-surface group-hover:text-primary transition-colors">Morning Mantras for Solar Connection</h3>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+<p class="text-sm text-on-surface-variant/80 line-clamp-2 mb-6">The power of Surya Namaskar combined with seed mantras to ignite your internal fire.</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<div class="flex gap-4">
+<div class="flex items-center gap-1.5 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">visibility</span>
+                                        8.2k
+                                    </div>
+<div class="flex items-center gap-1.5 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">share</span>
+                                        456
+                                    </div>
+</div>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant/40">18 Oct, 2023</span>
+</div>
+</div>
+</div>
+<!-- Post 3 -->
+<div class="group bg-surface-container-high rounded-lg overflow-hidden border border-primary/5 hover:border-primary/40 transition-all duration-500">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Deep space astronomical telescope view of stars" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtqGeUCAXVsdkWrIOSB-UoIM3-nl0_icqpTyPN_Munqf46hDKt0yksRB0AbzJRSkpJ9ZGhlX78wzooLImWo9KnHi9Xd5K22szZbfuJVHTXbtglsUKoWO4meTvfoHy4O7H7ld6P03Fq26YQFJ3hxnbGIDnTbGuOPAPX2E9kQkA4xCsRiOTpQGdf8NXMAB6ovCW7rcrpWPUA_Hxe7o2Pf21fsyLCxssf50VQTsvnsYnZGKRQQFyU6i_PVSfiSAV9wXo_E2swIFwaBSA7"/>
+<div class="absolute top-4 left-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-full border border-primary/20">
+<span class="text-[10px] font-bold text-primary tracking-widest uppercase">Planetary</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-on-surface group-hover:text-primary transition-colors">Mercury Retrograde: A Guide to Clarity</h3>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+<p class="text-sm text-on-surface-variant/80 line-clamp-2 mb-6">Navigating miscommunications and technological hurdles through Vedic wisdom and stillness.</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<div class="flex gap-4">
+<div class="flex items-center gap-1.5 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">visibility</span>
+                                        15.9k
+                                    </div>
+<div class="flex items-center gap-1.5 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">share</span>
+                                        1.2k
+                                    </div>
+</div>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant/40">12 Oct, 2023</span>
+</div>
+</div>
+</div>
+<!-- Add New Card Placeholder -->
+<div class="border-2 border-dashed border-primary/10 rounded-lg flex flex-col items-center justify-center p-8 hover:bg-primary/5 hover:border-primary/30 transition-all duration-300 group cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl text-primary">add</span>
+</div>
+<span class="font-bold text-on-surface">Draft New Article</span>
+<p class="text-xs text-on-surface-variant/60 mt-1">Start your next celestial insight</p>
+</div>
+</div>
+</div>
+<!-- Right Column: Celestial Calendar & Stats -->
+<div class="col-span-12 lg:col-span-4 space-y-8">
+<!-- Celestial Calendar Widget -->
+<div class="glass-card rounded-lg p-6 border border-primary/10 shadow-2xl relative overflow-hidden">
+<div class="absolute -top-10 -right-10 opacity-10">
+<span class="material-symbols-outlined text-9xl text-primary" style="font-variation-settings: 'FILL' 1;">brightness_7</span>
+</div>
+<div class="relative z-10">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline text-xl text-primary">Celestial Calendar</h3>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60">Nov 2023</span>
+</div>
+<!-- Mini Calendar Grid -->
+<div class="grid grid-cols-7 gap-2 mb-6">
+<div class="text-[10px] text-center text-on-surface-variant/40">S</div>
+<div class="text-[10px] text-center text-on-surface-variant/40">M</div>
+<div class="text-[10px] text-center text-on-surface-variant/40">T</div>
+<div class="text-[10px] text-center text-on-surface-variant/40">W</div>
+<div class="text-[10px] text-center text-on-surface-variant/40">T</div>
+<div class="text-[10px] text-center text-on-surface-variant/40">F</div>
+<div class="text-[10px] text-center text-on-surface-variant/40">S</div>
+<div class="p-1.5 text-center text-xs opacity-20">29</div>
+<div class="p-1.5 text-center text-xs opacity-20">30</div>
+<div class="p-1.5 text-center text-xs text-on-surface-variant">1</div>
+<div class="p-1.5 text-center text-xs text-on-surface-variant">2</div>
+<div class="p-1.5 text-center text-xs text-on-surface-variant">3</div>
+<div class="p-1.5 text-center text-xs text-on-surface-variant">4</div>
+<div class="p-1.5 text-center text-xs text-on-surface-variant">5</div>
+<div class="p-1.5 text-center text-xs text-on-surface-variant ring-1 ring-primary/40 rounded-full bg-primary/10 font-bold">6</div>
+<div class="p-1.5 text-center text-xs text-on-surface-variant">7</div>
+<div class="p-1.5 text-center text-xs text-on-surface-variant">8</div>
+<div class="p-1.5 text-center text-xs text-on-surface-variant">9</div>
+<div class="p-1.5 text-center text-xs text-on-surface-variant font-bold text-tertiary">10</div>
+<div class="p-1.5 text-center text-xs text-on-surface-variant">11</div>
+<div class="p-1.5 text-center text-xs text-on-surface-variant">12</div>
+</div>
+<!-- Transit Indicators -->
+<div class="space-y-4">
+<div class="flex items-start gap-3 p-3 bg-primary/5 rounded-md border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">ac_unit</span>
+<div>
+<p class="text-xs font-bold text-on-surface">Mercury in Sagittarius</p>
+<p class="text-[10px] text-on-surface-variant/70 mt-0.5">Focus: Global communication &amp; philosophy</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 bg-tertiary/5 rounded-md border-l-4 border-tertiary">
+<span class="material-symbols-outlined text-tertiary text-lg" style="font-variation-settings: 'FILL' 1;">brightness_low</span>
+<div>
+<p class="text-xs font-bold text-on-surface">Karthigai Deepam</p>
+<p class="text-[10px] text-on-surface-variant/70 mt-0.5">Content Theme: Illumination &amp; Wisdom</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 text-xs text-primary font-bold uppercase tracking-widest flex items-center justify-center gap-2 hover:opacity-80 transition-opacity">
+                            View Full Planetary Deck
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Engagement Highlights -->
+<div class="bg-surface-container-low rounded-lg p-6 border border-outline-variant/10">
+<h3 class="font-headline text-lg text-on-surface mb-6">Archive Insights</h3>
+<div class="space-y-6">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant/60 mb-1">Total Readers</p>
+<p class="text-2xl font-headline text-on-surface">142.8k</p>
+</div>
+<div class="text-green-400 text-xs flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                                +12%
+                            </div>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant/60 mb-1">Avg. Read Time</p>
+<p class="text-2xl font-headline text-on-surface">4m 22s</p>
+</div>
+<div class="text-on-surface-variant/40 text-xs flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-sm">horizontal_rule</span>
+                                0%
+                            </div>
+</div>
+</div>
+<!-- Activity Feed -->
+<div class="mt-10 pt-6 border-t border-outline-variant/10">
+<p class="text-xs font-bold uppercase tracking-widest text-primary mb-4">Recent Activity</p>
+<div class="space-y-4">
+<div class="flex gap-3">
+<div class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5"></div>
+<p class="text-xs text-on-surface-variant"><span class="text-on-surface font-semibold">New Comment</span> on "Saturn's Transit" from user @shanti_om</p>
+</div>
+<div class="flex gap-3">
+<div class="w-1.5 h-1.5 rounded-full bg-tertiary mt-1.5"></div>
+<p class="text-xs text-on-surface-variant"><span class="text-on-surface font-semibold">Post Shared</span> 45 times in last 2 hours</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Shimmering Marquee Strip -->
+<div class="fixed bottom-0 left-64 right-0 bg-[#1a0030] py-2 overflow-hidden whitespace-nowrap border-t border-primary/10">
+<div class="inline-flex items-center gap-12 animate-marquee">
+<span class="text-[10px] uppercase tracking-[0.4em] text-on-surface-variant/40">ॐ नमः शिवाय</span>
+<span class="text-[10px] uppercase tracking-[0.4em] text-primary/40 font-bold">MERCURY RETROGRADE IN 4 DAYS</span>
+<span class="text-[10px] uppercase tracking-[0.4em] text-on-surface-variant/40">YOGA KARMA PHALA</span>
+<span class="text-[10px] uppercase tracking-[0.4em] text-primary/40 font-bold">FULL MOON PHASE ACTIVE</span>
+<span class="text-[10px] uppercase tracking-[0.4em] text-on-surface-variant/40">ॐ नमः शिवाय</span>
+<span class="text-[10px] uppercase tracking-[0.4em] text-primary/40 font-bold">MERCURY RETROGRADE IN 4 DAYS</span>
+<span class="text-[10px] uppercase tracking-[0.4em] text-on-surface-variant/40">YOGA KARMA PHALA</span>
+<span class="text-[10px] uppercase tracking-[0.4em] text-primary/40 font-bold">FULL MOON PHASE ACTIVE</span>
+</div>
+</div>
+<style>
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: inline-flex;
+            animation: marquee 30s linear infinite;
+        }
+    </style>
+</body></html>

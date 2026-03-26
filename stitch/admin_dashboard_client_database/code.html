@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trikaal Admin - Client Database</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "background": "#200436",
+              "secondary-fixed": "#efdbff",
+              "primary-fixed": "#ffe08f",
+              "inverse-surface": "#f2daff",
+              "surface-tint": "#e6c364",
+              "tertiary": "#f0c040",
+              "on-secondary-fixed": "#2a064b",
+              "on-tertiary-fixed": "#251a00",
+              "on-secondary": "#402061",
+              "surface": "#200436",
+              "primary": "#e6c364",
+              "error": "#ffb4ab",
+              "secondary-fixed-dim": "#dcb8ff",
+              "on-secondary-fixed-variant": "#583879",
+              "tertiary-fixed": "#ffdf97",
+              "tertiary-container": "#d2a525",
+              "outline": "#99907e",
+              "on-error-container": "#ffdad6",
+              "on-error": "#690005",
+              "on-secondary-container": "#cfa9f4",
+              "surface-bright": "#482d5e",
+              "on-primary": "#3d2e00",
+              "inverse-on-surface": "#3f2455",
+              "surface-container-highest": "#442959",
+              "secondary-container": "#5a3a7c",
+              "on-tertiary-fixed-variant": "#5a4400",
+              "primary-container": "#c9a84c",
+              "on-background": "#f2daff",
+              "surface-container": "#2d1342",
+              "on-surface-variant": "#d0c5b2",
+              "secondary": "#dcb8ff",
+              "on-surface": "#f2daff",
+              "surface-container-lowest": "#1a0030",
+              "surface-dim": "#200436",
+              "on-tertiary-container": "#513d00",
+              "surface-container-low": "#290e3e",
+              "on-primary-fixed": "#241a00",
+              "outline-variant": "#4d4637",
+              "on-primary-fixed-variant": "#584400",
+              "surface-container-high": "#381e4e",
+              "error-container": "#93000a",
+              "tertiary-fixed-dim": "#f0c040",
+              "on-tertiary": "#3e2e00",
+              "surface-variant": "#442959",
+              "primary-fixed-dim": "#e6c364",
+              "on-primary-container": "#503d00",
+              "inverse-primary": "#755b00"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #200436;
+        }
+        .serif-text {
+            font-family: 'Noto Serif', serif;
+        }
+        .glass-panel {
+            background: rgba(68, 41, 89, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(230, 195, 100, 0.2);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased overflow-hidden h-screen">
+<!-- SideNavBar Execution -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r border-[#e6c364]/10 bg-[#1a0030] flex flex-col py-6 z-50 shadow-[20px_0_40px_rgba(13,0,24,0.6)]">
+<div class="px-6 mb-10">
+<h1 class="text-2xl font-serif font-bold text-[#e6c364] tracking-tight">Trikaal Admin</h1>
+<p class="text-xs font-label text-on-surface-variant/60 tracking-widest uppercase mt-1">The Cosmic Oracle</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-6 py-3 text-[#d0c5b2]/70 hover:bg-[#442959]/30 hover:text-[#e6c364] transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-sm font-medium">Overview</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-[#d0c5b2]/70 hover:bg-[#442959]/30 hover:text-[#e6c364] transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span class="text-sm font-medium">Consultations</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 bg-[#e6c364]/10 text-[#e6c364] border-r-4 border-[#e6c364] font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-sm font-medium">Clients</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-[#d0c5b2]/70 hover:bg-[#442959]/30 hover:text-[#e6c364] transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span class="text-sm font-medium">Blog</span>
+</a>
+</nav>
+<div class="px-4 mt-auto space-y-4">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold py-3 rounded-full flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-xl" data-icon="add">add</span>
+<span class="text-sm">New Consultation</span>
+</button>
+<div class="pt-6 border-t border-[#e6c364]/10 space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 text-[#d0c5b2]/70 hover:text-[#e6c364] transition-colors" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="settings">settings</span>
+<span class="text-sm">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-[#d0c5b2]/70 hover:text-[#e6c364] transition-colors" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="help_outline">help_outline</span>
+<span class="text-sm">Support</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- TopNavBar Execution -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-[#200436]/80 backdrop-blur-xl flex justify-between items-center px-8 shadow-sm">
+<div class="flex items-center gap-4 bg-surface-container-low/50 px-4 py-2 rounded-full border border-outline-variant/10 w-96 focus-within:ring-1 focus-within:ring-[#e6c364]/30 focus-within:bg-[#1a0030] transition-all duration-200">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full text-on-surface placeholder:text-on-surface-variant/50 font-body" placeholder="Search cosmic paths..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<button class="text-[#d0c5b2] hover:text-[#f0c040] transition-all relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<button class="text-[#d0c5b2] hover:text-[#f0c040] transition-all">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+</div>
+<div class="h-8 w-px bg-outline-variant/20"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-sm font-bold text-[#e6c364]">Admin Profile</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Master Oracle</p>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-primary/20 p-0.5">
+<img alt="Admin Avatar" class="w-full h-full rounded-full object-cover" data-alt="Close-up of a distinguished male profile portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxALo1NxEn8_UuCmx78x0rqrCuTxFn6nBOKm8vETk6NYrBxVSK16MrA7JkAbpw7qBYlK3Z4BKyZM_t_mVkzPr7lOQKNsmK8L8pIJDMTSd5TbHfZZ3r7k0HvZZxjcGTD_6McHqNwq9NclbB16R9_ez10-bXjrTkKFX9xknS0TBAl9zYjAQrwfE7Ybqa3dYiv--Q6UWGLn5g0nuixcKsAIuIULUkRsbcm8kHgnA2VL6ZykW9L_w0iPNxeHhVZuVQOcm4SCA60vp9N48O"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 pt-20 h-screen overflow-hidden flex bg-background">
+<!-- Left: Client List (Bento-ish Grid) -->
+<section class="flex-1 p-8 overflow-y-auto custom-scrollbar">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="serif-text text-4xl font-bold text-primary tracking-tight">Client Archive</h2>
+<p class="text-on-surface-variant font-label text-sm mt-1">Sustaining the threads of 1,248 celestial journeys</p>
+</div>
+<button class="px-6 py-2.5 rounded-full border border-primary/30 text-primary font-bold text-sm hover:bg-primary/10 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="auto_awesome">auto_awesome</span>
+                    Generate New Kundali
+                </button>
+</div>
+<!-- Dashboard Filters -->
+<div class="flex gap-4 mb-8">
+<button class="px-5 py-2 bg-primary text-on-primary rounded-full text-xs font-bold uppercase tracking-widest">All Clients</button>
+<button class="px-5 py-2 bg-surface-container-highest text-on-surface-variant rounded-full text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors">VVIP Soul</button>
+<button class="px-5 py-2 bg-surface-container-highest text-on-surface-variant rounded-full text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors">Recent Queries</button>
+<button class="px-5 py-2 bg-surface-container-highest text-on-surface-variant rounded-full text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors">Critical Transit</button>
+</div>
+<!-- Client Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-6 pb-20">
+<!-- Client Card 1 (Active) -->
+<div class="group relative p-6 rounded-lg bg-surface-container-high border border-primary/20 shadow-xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-primary/5">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+<div class="flex gap-5">
+<div class="relative">
+<img alt="Aarohi Sharma" class="w-16 h-16 rounded-full object-cover border-2 border-primary/40 p-1" data-alt="Portrait of a young woman smiling elegantly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1KaeNXE2twUO-wD6IM2Q2KtZ_ucBV2MruiP9n6t1JyjmBexG7wHH8y3__tj414sfrdo477KYRF6dHfXZ03rjd7DliYMM0lh-AiLfOYLuuuRhOmDzUIOE9w6I5_jCBVWbDQs7dMrxzcoI0seCO5BdktqORRE990kQ0-c1xEIKh1iUHy6GeTTBvyUuTTd6Fn20upiuzKy148xxAJN9Qmp-o1Gt3G4Cdf8I2Chd5oNn7e0f9JNVYeGZaPYfgacYblXCZCTniI4xgiyX-"/>
+<div class="absolute -bottom-1 -right-1 w-6 h-6 bg-secondary-container rounded-full flex items-center justify-center border border-background">
+<span class="material-symbols-outlined text-[14px] text-on-secondary-container" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="serif-text text-xl font-bold text-on-surface">Aarohi Sharma</h3>
+<p class="text-xs text-on-surface-variant/70 uppercase tracking-tighter">Joined Dec 2023 • #TRI-8892</p>
+</div>
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-bold uppercase tracking-widest border border-primary/20">Critical Sade Sati</span>
+</div>
+<div class="mt-4 grid grid-cols-3 gap-2">
+<div class="bg-surface-container-lowest/50 p-2 rounded-md text-center">
+<p class="text-[9px] uppercase tracking-widest text-on-surface-variant/60 font-bold mb-1">Sun</p>
+<div class="flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-sm text-tertiary" data-icon="wb_sunny">wb_sunny</span>
+<span class="text-xs font-bold">Leo</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest/50 p-2 rounded-md text-center">
+<p class="text-[9px] uppercase tracking-widest text-on-surface-variant/60 font-bold mb-1">Moon</p>
+<div class="flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="brightness_2">brightness_2</span>
+<span class="text-xs font-bold">Scorpio</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest/50 p-2 rounded-md text-center">
+<p class="text-[9px] uppercase tracking-widest text-on-surface-variant/60 font-bold mb-1">Rising</p>
+<div class="flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="north_east">north_east</span>
+<span class="text-xs font-bold">Libra</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Client Card 2 -->
+<div class="group relative p-6 rounded-lg bg-surface-container-low/40 border border-outline-variant/10 hover:border-primary/20 hover:bg-surface-container-high transition-all duration-300 cursor-pointer">
+<div class="flex gap-5">
+<div class="relative">
+<img alt="Vikram Malhotra" class="w-16 h-16 rounded-full object-cover border border-outline-variant/30 grayscale hover:grayscale-0 transition-all p-1" data-alt="Professional headshot of a middle-aged man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4FR0LFB5tVrJXmXWvE9WCBXwDy7h93JC8cmt66DYoyNwDgRyD8bprJmEQ0COddqSe4TlrgLKYsGZ4YMDFnnt2Qrd5jpikMe5O15Q5zM9peuAs3T1L1eu53q2UnCLdVv_B_Ahm6HnQEUdfxzbjV3HOIVR8R6nlJQJnwAsA0OrHAf_b3X0ZYT6EgZ1dWLU3QlAmKWddvTiY-tbQg1pqEPzGy3KRaqaWTon5hwJnaX0RQK6Qs9JxNpKAH1ew01YPndvZCGGVm9lcRX6a"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="serif-text text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Vikram Malhotra</h3>
+<p class="text-xs text-on-surface-variant/70 uppercase tracking-tighter">Joined Oct 2023 • #TRI-7104</p>
+</div>
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant rounded-full text-[10px] font-bold uppercase tracking-widest border border-outline-variant/20">Standard</span>
+</div>
+<div class="mt-4 grid grid-cols-3 gap-2">
+<div class="bg-surface-container-lowest/30 p-2 rounded-md text-center">
+<p class="text-[9px] uppercase tracking-widest text-on-surface-variant/60 font-bold mb-1">Sun</p>
+<div class="flex items-center justify-center gap-1">
+<span class="text-xs font-bold">Aries</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest/30 p-2 rounded-md text-center">
+<p class="text-[9px] uppercase tracking-widest text-on-surface-variant/60 font-bold mb-1">Moon</p>
+<div class="flex items-center justify-center gap-1">
+<span class="text-xs font-bold">Taurus</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest/30 p-2 rounded-md text-center">
+<p class="text-[9px] uppercase tracking-widest text-on-surface-variant/60 font-bold mb-1">Rising</p>
+<div class="flex items-center justify-center gap-1">
+<span class="text-xs font-bold">Virgo</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Client Card 3 -->
+<div class="group relative p-6 rounded-lg bg-surface-container-low/40 border border-outline-variant/10 hover:border-primary/20 hover:bg-surface-container-high transition-all duration-300 cursor-pointer">
+<div class="flex gap-5">
+<div class="relative">
+<img alt="Elena Petrova" class="w-16 h-16 rounded-full object-cover border border-outline-variant/30 grayscale hover:grayscale-0 transition-all p-1" data-alt="Artistic portrait of a woman looking sideways" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWyc6ZyqFS3Fs0NoZq77ZmoWEhf2pPelR3zMVTIbsPQT0wV6bNoKLmVgS6seKVacJuPEDr10NdgzqOvV3-JCNC3GUw9qIms4Pm5h5lHJKzJW6GVHIWmMZbEPJixlE5JN-1RbDBuI6fG7bSwAzaIId0xlvs2Nir6JMeKq-e7nQayuO4l24glo8AO3jCeIFMkqj3HyWtBhEH59ls8owrj0sJRCPzGtaBkMhmqOYJ0oRNOke2r_Fouhto9R9ZFgZSqCULNxUvnq_-5Cyd"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="serif-text text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Elena Petrova</h3>
+<p class="text-xs text-on-surface-variant/70 uppercase tracking-tighter">Joined Nov 2023 • #TRI-6612</p>
+</div>
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant rounded-full text-[10px] font-bold uppercase tracking-widest border border-outline-variant/20">Standard</span>
+</div>
+<div class="mt-4 grid grid-cols-3 gap-2">
+<div class="bg-surface-container-lowest/30 p-2 rounded-md text-center">
+<p class="text-[9px] uppercase tracking-widest text-on-surface-variant/60 font-bold mb-1">Sun</p>
+<div class="flex items-center justify-center gap-1">
+<span class="text-xs font-bold">Gemini</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest/30 p-2 rounded-md text-center">
+<p class="text-[9px] uppercase tracking-widest text-on-surface-variant/60 font-bold mb-1">Moon</p>
+<div class="flex items-center justify-center gap-1">
+<span class="text-xs font-bold">Cancer</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest/30 p-2 rounded-md text-center">
+<p class="text-[9px] uppercase tracking-widest text-on-surface-variant/60 font-bold mb-1">Rising</p>
+<div class="flex items-center justify-center gap-1">
+<span class="text-xs font-bold">Gemini</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Client Card 4 -->
+<div class="group relative p-6 rounded-lg bg-surface-container-low/40 border border-outline-variant/10 hover:border-primary/20 hover:bg-surface-container-high transition-all duration-300 cursor-pointer">
+<div class="flex gap-5">
+<div class="relative">
+<img alt="Arjun Rao" class="w-16 h-16 rounded-full object-cover border border-outline-variant/30 grayscale hover:grayscale-0 transition-all p-1" data-alt="Portrait of a young man with a slight smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPzQH7IJcPpoICEA6PrOp5H54JzljsrXc0Vc0KW0opzDdtWWP0O8x9YHQar3yO5Z7-u54Eo7j2dHSCbxkr2kTAJXEB3GtCAFgvGVNcm0uN_zEsMceda__-apBo2dkN1QApNZjvPWYSPu6htKg4pPTOvNplDZ0deIbLlUcQvIxUGhztEc9UqQSio2ZkKP1ceTutnJnXIOaKIn8hL9apYE-JS5Vw3sdvGnzqP8shmVq6Z1o5rhop8w_74YgrVXA9_goF5xgx5V8-3d6s"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="serif-text text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Arjun Rao</h3>
+<p class="text-xs text-on-surface-variant/70 uppercase tracking-tighter">Joined Jan 2024 • #TRI-9021</p>
+</div>
+<span class="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full text-[10px] font-bold uppercase tracking-widest border border-tertiary/20">Corporate Plan</span>
+</div>
+<div class="mt-4 grid grid-cols-3 gap-2">
+<div class="bg-surface-container-lowest/30 p-2 rounded-md text-center">
+<p class="text-[9px] uppercase tracking-widest text-on-surface-variant/60 font-bold mb-1">Sun</p>
+<div class="flex items-center justify-center gap-1">
+<span class="text-xs font-bold">Pisces</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest/30 p-2 rounded-md text-center">
+<p class="text-[9px] uppercase tracking-widest text-on-surface-variant/60 font-bold mb-1">Moon</p>
+<div class="flex items-center justify-center gap-1">
+<span class="text-xs font-bold">Aries</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest/30 p-2 rounded-md text-center">
+<p class="text-[9px] uppercase tracking-widest text-on-surface-variant/60 font-bold mb-1">Rising</p>
+<div class="flex items-center justify-center gap-1">
+<span class="text-xs font-bold">Sagittarius</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right: Client Detail View (Sticky Column) -->
+<aside class="w-96 border-l border-outline-variant/10 bg-surface-container-lowest flex flex-col shadow-2xl overflow-y-auto custom-scrollbar">
+<div class="p-8">
+<!-- Profile Header -->
+<div class="text-center mb-8">
+<div class="inline-block relative mb-4">
+<div class="w-24 h-24 rounded-full border-2 border-primary p-1">
+<img alt="Aarohi Sharma Large" class="w-full h-full rounded-full object-cover" data-alt="Enlarged portrait of a young woman smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqYalnvd32FogU0bLbguks-vXDPjaKqC-SY8zrqvxG4YLsmRJk-OF3kjv26MCQ4dIdMuazr6VSW0Wfla9liB3yMeUXuvUCAasRtHD2qiaFOkHLL9fXJapzn0qIgQ9Ocw11h-z0Qn_ZRk_GueCqPopMs6eFUy0b1Ci5DQJn8A5y4PxMl6ECib1QMZ1IMZlBIsk0sE3W7o5F1PivB2au3gathzEwEpK51ap884ubiqfeEA1hBTE1UO45IxmLngOhf4_14XL9jglC6i0w"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-primary text-on-primary w-8 h-8 rounded-full flex items-center justify-center border-4 border-surface-container-lowest">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+</div>
+</div>
+<h3 class="serif-text text-2xl font-bold text-on-surface">Aarohi Sharma</h3>
+<p class="text-sm text-primary font-medium">Spiritual Journey: Level 4 Archetype</p>
+</div>
+<!-- Birth Details Section -->
+<div class="space-y-6 mb-10">
+<div class="flex items-center justify-between">
+<h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface-variant/60">Birth Coordinates</h4>
+<div class="h-px flex-1 ml-4 bg-outline-variant/20"></div>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 bg-surface-container-high rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="calendar_month">calendar_month</span>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-0.5">Date of Birth</p>
+<p class="text-sm font-bold serif-text">14 August 1994</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 bg-surface-container-high rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="schedule">schedule</span>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-0.5">Time of Birth</p>
+<p class="text-sm font-bold serif-text">04:22 AM IST</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 bg-surface-container-high rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="location_on">location_on</span>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-0.5">Place of Birth</p>
+<p class="text-sm font-bold serif-text">Varanasi, Uttar Pradesh</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Consultation History -->
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface-variant/60">Consultation Path</h4>
+<div class="h-px flex-1 ml-4 bg-outline-variant/20"></div>
+</div>
+<div class="space-y-4">
+<!-- History Item 1 -->
+<div class="relative pl-6 pb-6 border-l border-outline-variant/30">
+<div class="absolute left-[-5px] top-0 w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_10px_rgba(230,195,100,0.5)]"></div>
+<div class="bg-surface-container-high p-4 rounded-lg">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[9px] font-bold uppercase text-primary tracking-widest">Completed</span>
+<span class="text-[9px] text-on-surface-variant">22 Jan 2024</span>
+</div>
+<p class="text-sm font-bold serif-text mb-1">Sade Sati Remedy Session</p>
+<p class="text-xs text-on-surface-variant/80 line-clamp-2">Discussed Shani Shanti rituals and gemstone recommendations...</p>
+<button class="mt-3 text-[10px] text-primary font-bold hover:underline flex items-center gap-1">
+                                    VIEW RECORD <span class="material-symbols-outlined text-[12px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- History Item 2 -->
+<div class="relative pl-6 pb-2">
+<div class="absolute left-[-5px] top-0 w-2.5 h-2.5 rounded-full bg-outline-variant"></div>
+<div class="bg-surface-container-low p-4 rounded-lg opacity-60">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[9px] font-bold uppercase text-on-surface-variant/60 tracking-widest">Archive</span>
+<span class="text-[9px] text-on-surface-variant">15 Dec 2023</span>
+</div>
+<p class="text-sm font-bold serif-text mb-1">Natal Chart Intro</p>
+<p class="text-xs text-on-surface-variant/80">Initial soul path discovery and planetary strength analysis.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Action CTA -->
+<div class="mt-12">
+<button class="w-full bg-surface-container-highest hover:bg-surface-container-high text-primary border border-primary/20 font-bold py-4 rounded-xl flex items-center justify-center gap-3 transition-all">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+                        Full Archetype Report
+                    </button>
+</div>
+</div>
+</aside>
+</main>
+<!-- Mandala Background Accent (Asymmetric Design System Rule) -->
+<div class="fixed -bottom-32 -left-32 w-96 h-96 opacity-[0.03] pointer-events-none select-none z-0">
+<svg class="fill-primary animate-[spin_120s_linear_infinite]" viewbox="0 0 100 100">
+<path d="M50 0 L55 35 L90 35 L60 55 L75 90 L50 70 L25 90 L40 55 L10 35 L45 35 Z"></path>
+<circle cx="50" cy="50" r="10"></circle>
+<circle cx="50" cy="50" fill="none" r="45" stroke="currentColor" stroke-width="0.5"></circle>
+</svg>
+</div>
+</body></html>

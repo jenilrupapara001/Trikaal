@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trikaal - Who Can Apply</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary": "#f0c040",
+                        "primary": "#e6c364",
+                        "outline-variant": "#4d4637",
+                        "on-tertiary-fixed-variant": "#5a4400",
+                        "on-secondary-fixed": "#2a064b",
+                        "on-surface-variant": "#d0c5b2",
+                        "surface-container-highest": "#442959",
+                        "on-tertiary-container": "#513d00",
+                        "surface-dim": "#200436",
+                        "on-tertiary": "#3e2e00",
+                        "secondary-fixed": "#efdbff",
+                        "on-background": "#f2daff",
+                        "on-surface": "#f2daff",
+                        "on-primary-fixed-variant": "#584400",
+                        "on-primary-fixed": "#241a00",
+                        "surface-container-high": "#381e4e",
+                        "on-primary-container": "#503d00",
+                        "surface-container-lowest": "#1a0030",
+                        "inverse-on-surface": "#3f2455",
+                        "surface-tint": "#e6c364",
+                        "inverse-primary": "#755b00",
+                        "surface-container-low": "#290e3e",
+                        "secondary": "#dcb8ff",
+                        "on-tertiary-fixed": "#251a00",
+                        "primary-container": "#c9a84c",
+                        "outline": "#99907e",
+                        "error-container": "#93000a",
+                        "tertiary-container": "#d2a525",
+                        "primary-fixed": "#ffe08f",
+                        "tertiary-fixed": "#ffdf97",
+                        "tertiary-fixed-dim": "#f0c040",
+                        "on-secondary-container": "#cfa9f4",
+                        "inverse-surface": "#f2daff",
+                        "surface-container": "#2d1342",
+                        "background": "#200436",
+                        "secondary-container": "#5a3a7c",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#dcb8ff",
+                        "surface": "#200436",
+                        "surface-bright": "#482d5e",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#583879",
+                        "surface-variant": "#442959",
+                        "primary-fixed-dim": "#e6c364",
+                        "on-secondary": "#402061",
+                        "on-primary": "#3d2e00",
+                        "error": "#ffb4ab"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .yantric-grid {
+            background-image: radial-gradient(circle at 1px 1px, rgba(230, 195, 100, 0.05) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        .sacred-geometry-overlay {
+            mask-image: radial-gradient(circle, black 40%, transparent 80%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+<!-- TopNavBar -->
+<nav class="bg-[#200436]/80 backdrop-blur-xl docked full-width top-0 sticky z-50 no-border bg-gradient-to-b from-[#1a0030] to-transparent shadow-[0px_20px_40px_rgba(13,0,24,0.6)] flex justify-between items-center w-full px-8 py-4 max-w-full">
+<div class="text-2xl font-bold text-[#e6c364] font-['Noto_Serif'] italic hover:scale-105 transition-transform duration-300 cursor-pointer">
+            Trikaal
+        </div>
+<div class="hidden md:flex gap-8 font-['Noto_Serif'] text-[#d0c5b2] tracking-wide items-center">
+<a class="text-[#d0c5b2] hover:text-[#e6c364] transition-colors" href="#">Home</a>
+<a class="text-[#d0c5b2] hover:text-[#e6c364] transition-colors" href="#">Services</a>
+<a class="text-[#e6c364] border-b-2 border-[#e6c364] pb-1" href="#">About</a>
+<a class="text-[#d0c5b2] hover:text-[#e6c364] transition-colors" href="#">Contact</a>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2 rounded-full font-semibold hover:scale-105 transition-all active:opacity-80 active:scale-95">
+            Book Consultation
+        </button>
+</nav>
+<!-- Main Content Canvas -->
+<main class="relative min-h-screen yantric-grid overflow-hidden">
+<!-- Decorative Background Mandala (Bleeds off edge) -->
+<div class="absolute -top-48 -right-48 w-[800px] h-[800px] opacity-10 pointer-events-none select-none">
+<img class="w-full h-full object-contain rotate-12" data-alt="Faint golden celestial mandala pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjNvd8tLE_2I9D6LLV1NrX0TwX2Jk92L8xt_mafJbjYoUWYPLifkjdvBbeyahkLoK5uS8G7Oh4TB6C2GoO9lZ4SaO-VpAtjUnmpNW9jlb037hJEQoePaTxM_aBX1pNvpwc9zsEIuH3g1yYIGQK28ppVbqmSvieyL6nEdITF_rBb8J2qKcdJztyzGfZaRYU5KMIJfjj0-KuJcydqJG4Og2eg0QBk1-lDEwQ-0LjJYa3XoZsr5Ig9JPyUyH-2SYS3ZxscouNIIf3qkHq"/>
+</div>
+<section class="container mx-auto px-6 py-24 md:py-32 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<!-- Left Column: Information & Feature Cards -->
+<div class="space-y-12">
+<header class="space-y-4">
+<span class="text-primary font-label tracking-[0.2em] text-xs uppercase">The Cosmic Path</span>
+<h1 class="font-headline text-5xl md:text-6xl text-primary font-bold leading-tight -tracking-tight">
+                            Who Can Benefit?
+                        </h1>
+<p class="text-on-surface-variant max-w-lg text-lg leading-relaxed">
+                            Trikaal transcends boundaries, offering celestial guidance to those seeking clarity in the labyrinth of life. Our archives are open to all souls navigating the earthly plane.
+                        </p>
+</header>
+<!-- Feature Cards Grid (Asymmetric feel via spacing/stagger) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Card 1 -->
+<div class="bg-[#2D1342] border border-primary/10 p-8 rounded-lg group hover:border-primary/40 hover:shadow-[0px_0px_30px_rgba(230,195,100,0.15)] transition-all duration-500">
+<div class="mb-6 flex items-center justify-center w-14 h-14 rounded-full bg-primary/5 border border-primary/20 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">groups</span>
+</div>
+<h3 class="font-headline text-xl text-primary mb-3">For Everyone</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light">
+                                From students seeking direction to executives charting market cycles, Vedic wisdom is universal.
+                            </p>
+</div>
+<!-- Card 2 -->
+<div class="bg-[#2D1342] border border-primary/10 p-8 rounded-lg group hover:border-primary/40 hover:shadow-[0px_0px_30px_rgba(230,195,100,0.15)] transition-all duration-500 mt-0 md:mt-8">
+<div class="mb-6 flex items-center justify-center w-14 h-14 rounded-full bg-primary/5 border border-primary/20 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">auto_fix_high</span>
+</div>
+<h3 class="font-headline text-xl text-primary mb-3">Customized Remedies</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light">
+                                Personalized ritual paths and planetary alignments tailored specifically to your unique birth chart.
+                            </p>
+</div>
+<!-- Card 3 -->
+<div class="bg-[#2D1342] border border-primary/10 p-8 rounded-lg group hover:border-primary/40 hover:shadow-[0px_0px_30px_rgba(230,195,100,0.15)] transition-all duration-500">
+<div class="mb-6 flex items-center justify-center w-14 h-14 rounded-full bg-primary/5 border border-primary/20 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">encrypted</span>
+</div>
+<h3 class="font-headline text-xl text-primary mb-3">100% Confidential</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light">
+                                Your data and spiritual journey are held in a secure, digital vault, protected by highest standards.
+                            </p>
+</div>
+<!-- Card 4 -->
+<div class="bg-[#2D1342] border border-primary/10 p-8 rounded-lg group hover:border-primary/40 hover:shadow-[0px_0px_30px_rgba(230,195,100,0.15)] transition-all duration-500 mt-0 md:mt-8">
+<div class="mb-6 flex items-center justify-center w-14 h-14 rounded-full bg-primary/5 border border-primary/20 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">public</span>
+</div>
+<h3 class="font-headline text-xl text-primary mb-3">Global Reach</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light">
+                                Consultations across all timezones, ensuring the stars align for you, wherever you stand on Earth.
+                            </p>
+</div>
+</div>
+</div>
+<!-- Right Column: Visual Anchor -->
+<div class="relative flex items-center justify-center lg:justify-end">
+<div class="relative w-full max-w-lg aspect-square">
+<!-- Astrology Wheel / Kundali Visual -->
+<div class="absolute inset-0 border-[1px] border-primary/20 rounded-full animate-[spin_60s_linear_infinite]"></div>
+<div class="absolute inset-4 border-[1px] border-primary/10 rounded-full animate-[spin_40s_linear_infinite_reverse]"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-full h-full p-8 sacred-geometry-overlay opacity-60">
+<img class="w-full h-full object-contain filter drop-shadow-[0_0_15px_rgba(230,195,100,0.4)]" data-alt="Golden intricate Kundali astrology chart illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlxMu1xTNlRJe4dUZKVcoDypMsMnCNUpA4W-sQjQiL5Rc5AnpCmC8DaKfOvXO2cRhOtXYtLb5xkDJJjmRiLg98nqahHetRRCEmh0hbga6_j-u03luXOwGC3WyKJ3J-GKQfIqUIfeNxpJfe3X31HC8FxlA96oQaD_q_dRy2fvKs2HlIFFCRpndNxsEzfmm35CZxoT0I5cYD82Rc35HItZWDCDr6kFzJO93y_CrWGT8BChSGjAhYf4O7ETevOEqaj6QrFvgJN3qsAHX-"/>
+</div>
+</div>
+<!-- Overlaid Text -->
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center p-12 bg-background/20 backdrop-blur-sm rounded-full">
+<p class="font-headline text-2xl md:text-3xl text-primary italic leading-tight">
+                                "Your stars have a story.<br/>
+<span class="text-on-surface not-italic font-bold font-body text-lg mt-4 block uppercase tracking-widest">We help you read it."</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1a0030] full-width relative overflow-hidden grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 w-full font-['Manrope'] text-[#d0c5b2] text-sm">
+<div class="col-span-1 md:col-span-1">
+<div class="text-3xl font-bold text-[#e6c364] font-['Noto_Serif'] mb-4 italic">Trikaal</div>
+<p class="text-[#d0c5b2]/70 leading-relaxed max-w-xs">
+                Mapping the celestial archives for the modern seeker. Ancient Vedic wisdom, digitally distilled.
+            </p>
+</div>
+<div>
+<h4 class="text-[#e6c364] font-semibold mb-6 uppercase tracking-wider">Sanctuary</h4>
+<ul class="space-y-4">
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] transition-all hover:translate-x-1 inline-block" href="#">Privacy Policy</a></li>
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] transition-all hover:translate-x-1 inline-block" href="#">Terms of Service</a></li>
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] transition-all hover:translate-x-1 inline-block" href="#">Consultation Guide</a></li>
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] transition-all hover:translate-x-1 inline-block" href="#">Vedic Wisdom</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-[#e6c364] font-semibold mb-6 uppercase tracking-wider">Social</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:shadow-[0_0_15px_rgba(230,195,100,0.4)] transition-all" href="#">
+<span class="material-symbols-outlined text-primary text-xl">star</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:shadow-[0_0_15px_rgba(230,195,100,0.4)] transition-all" href="#">
+<span class="material-symbols-outlined text-primary text-xl">auto_awesome</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:shadow-[0_0_15px_rgba(230,195,100,0.4)] transition-all" href="#">
+<span class="material-symbols-outlined text-primary text-xl">self_improvement</span>
+</a>
+</div>
+</div>
+<div class="col-span-1">
+<h4 class="text-[#e6c364] font-semibold mb-6 uppercase tracking-wider">Newsletter</h4>
+<p class="text-xs mb-4 text-[#d0c5b2]/50">Receive cosmic updates directly in your inbox.</p>
+<div class="flex">
+<input class="bg-surface-container-low border-none rounded-l-lg px-4 py-2 w-full focus:ring-1 focus:ring-primary/40 text-sm" placeholder="Your email" type="email"/>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-r-lg font-bold hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-base align-middle">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="col-span-1 md:col-span-4 pt-12 border-t border-primary/5 text-center text-[#d0c5b2]/40 text-xs">
+            © 2024 Trikaal Celestial Archive. All Sacred Rights Reserved.
+        </div>
+</footer>
+</body></html>

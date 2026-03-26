@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#200436",
+            "secondary-fixed": "#efdbff",
+            "primary-fixed": "#ffe08f",
+            "inverse-surface": "#f2daff",
+            "surface-tint": "#e6c364",
+            "tertiary": "#f0c040",
+            "on-secondary-fixed": "#2a064b",
+            "on-tertiary-fixed": "#251a00",
+            "on-secondary": "#402061",
+            "surface": "#200436",
+            "primary": "#e6c364",
+            "error": "#ffb4ab",
+            "secondary-fixed-dim": "#dcb8ff",
+            "on-secondary-fixed-variant": "#583879",
+            "tertiary-fixed": "#ffdf97",
+            "tertiary-container": "#d2a525",
+            "outline": "#99907e",
+            "on-error-container": "#ffdad6",
+            "on-error": "#690005",
+            "on-secondary-container": "#cfa9f4",
+            "surface-bright": "#482d5e",
+            "on-primary": "#3d2e00",
+            "inverse-on-surface": "#3f2455",
+            "surface-container-highest": "#442959",
+            "secondary-container": "#5a3a7c",
+            "on-tertiary-fixed-variant": "#5a4400",
+            "primary-container": "#c9a84c",
+            "on-background": "#f2daff",
+            "surface-container": "#2d1342",
+            "on-surface-variant": "#d0c5b2",
+            "secondary": "#dcb8ff",
+            "on-surface": "#f2daff",
+            "surface-container-lowest": "#1a0030",
+            "surface-dim": "#200436",
+            "on-tertiary-container": "#513d00",
+            "surface-container-low": "#290e3e",
+            "on-primary-fixed": "#241a00",
+            "outline-variant": "#4d4637",
+            "on-primary-fixed-variant": "#584400",
+            "surface-container-high": "#381e4e",
+            "error-container": "#93000a",
+            "tertiary-fixed-dim": "#f0c040",
+            "on-tertiary": "#3e2e00",
+            "surface-variant": "#442959",
+            "primary-fixed-dim": "#e6c364",
+            "on-primary-container": "#503d00",
+            "inverse-primary": "#755b00"
+          },
+          fontFamily: {
+            "headline": ["Noto Serif"],
+            "body": ["Manrope"],
+            "label": ["Manrope"]
+          },
+          borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      font-family: 'Manrope', sans-serif;
+      background-color: #200436;
+      color: #f2daff;
+    }
+    h1, h2, h3, .serif-text {
+      font-family: 'Noto Serif', serif;
+    }
+    .glass-card {
+      background: rgba(68, 41, 89, 0.4);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(230, 195, 100, 0.1);
+    }
+    .gold-gradient {
+      background: linear-gradient(135deg, #e6c364 0%, #c9a84c 100%);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Side Navigation Bar -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r border-[#e6c364]/10 bg-[#1a0030] dark:bg-[#1a0030] flex flex-col py-6 shadow-[20px_0_40px_rgba(13,0,24,0.6)] z-50">
+<div class="px-6 mb-10">
+<div class="text-2xl font-serif font-bold text-[#e6c364] tracking-tight">Trikaal Admin</div>
+<div class="text-xs font-medium text-[#d0c5b2]/60 uppercase tracking-widest mt-1">The Cosmic Oracle</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-6 py-3 bg-[#e6c364]/10 text-[#e6c364] border-r-4 border-[#e6c364] font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-sm tracking-wide">Overview</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-[#d0c5b2]/70 hover:bg-[#442959]/30 hover:text-[#e6c364] transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span class="text-sm tracking-wide">Consultations</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-[#d0c5b2]/70 hover:bg-[#442959]/30 hover:text-[#e6c364] transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-sm tracking-wide">Clients</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-[#d0c5b2]/70 hover:bg-[#442959]/30 hover:text-[#e6c364] transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span class="text-sm tracking-wide">Blog</span>
+</a>
+</nav>
+<div class="px-4 mb-6">
+<button class="w-full gold-gradient text-on-primary py-3 rounded-full font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary/20 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+<span class="text-sm uppercase tracking-tighter">New Consultation</span>
+</button>
+</div>
+<div class="mt-auto space-y-1">
+<a class="flex items-center gap-3 px-6 py-3 text-[#d0c5b2]/70 hover:text-[#e6c364] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-sm tracking-wide">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-[#d0c5b2]/70 hover:text-[#e6c364] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span class="text-sm tracking-wide">Support</span>
+</a>
+<div class="px-6 pt-6 flex items-center gap-3 border-t border-[#e6c364]/5 mt-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center border border-primary/20 overflow-hidden">
+<img alt="Admin Avatar" class="w-full h-full object-cover" data-alt="Portrait of an elegant Vedic astrologer admin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnNy54IsvOq5blZKZ6ZDBJQEDYEaAN9Xzae3o3xriStcg0r3AdrKBI7sYTEt775HTTUhmIxheg_x3tW-bbeuIWd6aYQsrIXPpdvRgG2HEgZ4i1-iKyV3jllua7vqPo5DMExYg7wrGImwwcGNNzDxGp5HnJ1XwZW3c6vrkuDbjg3-6SxXMvCPjzLaUbwpfxkE7O09BbrbtklMmg2aFk2wngtUNyT4uxpv5nEnNb0OjHGZoZaCwJ8ZJygM8GkDLpRnlQvCWD4YvYHSVH"/>
+</div>
+<div class="overflow-hidden">
+<p class="text-xs font-bold text-on-surface truncate">Acharya Varma</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Chief Oracle</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-[#200436]/80 backdrop-blur-xl flex justify-between items-center px-8 shadow-sm">
+<div class="flex items-center gap-4 w-1/3">
+<div class="relative w-full max-w-sm">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg" data-icon="search">search</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-full py-2 pl-10 pr-4 text-sm text-on-surface placeholder:text-on-surface-variant/40 focus:ring-1 focus:ring-primary/30 transition-all" placeholder="Search constellations, clients..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-on-surface-variant">
+<button class="hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full border-2 border-background"></span>
+</button>
+<button class="hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+</div>
+<div class="h-6 w-px bg-outline-variant/20 mx-2"></div>
+<div class="text-xs font-label uppercase tracking-widest text-primary font-bold">Admin Dashboard</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="ml-64 pt-20 px-8 pb-12">
+<!-- Header Section -->
+<section class="flex justify-between items-end mb-10">
+<div>
+<h1 class="text-4xl font-headline font-bold text-primary mb-2">Vedic Overview</h1>
+<p class="text-on-surface-variant text-sm font-body">Current celestial alignment: <span class="text-secondary font-semibold">Jupiter in Retrograde</span>. Aligning energies for high client engagement.</p>
+</div>
+<div class="flex gap-4">
+<div class="px-4 py-2 rounded-lg bg-surface-container-high border border-outline-variant/10 text-xs flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="calendar_month">calendar_month</span>
+<span class="text-on-surface-variant">Aug 2024 - Sept 2024</span>
+</div>
+</div>
+</section>
+<!-- Stat Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+<!-- Total Consultations -->
+<div class="glass-card p-6 rounded-lg relative overflow-hidden group">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-on-surface-variant text-xs font-label uppercase tracking-widest mb-1">Total Consultations</p>
+<h3 class="text-3xl font-headline font-bold text-on-surface">1,284</h3>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</div>
+</div>
+<div class="flex items-center gap-2 text-[10px] text-green-400 font-bold mb-4">
+<span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span>
+          12% vs last month
+        </div>
+<!-- Simple Sparkline SVG -->
+<svg class="w-full h-8 stroke-primary fill-none opacity-50" viewbox="0 0 100 20">
+<path d="M0 15 L10 12 L20 18 L30 10 L40 14 L50 8 L60 12 L70 5 L80 9 L90 2 L100 6" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+<!-- New Clients -->
+<div class="glass-card p-6 rounded-lg relative overflow-hidden group">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-on-surface-variant text-xs font-label uppercase tracking-widest mb-1">New Seekers</p>
+<h3 class="text-3xl font-headline font-bold text-on-surface">432</h3>
+</div>
+<div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+</div>
+</div>
+<div class="flex items-center gap-2 text-[10px] text-green-400 font-bold mb-4">
+<span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span>
+          8.4% growth
+        </div>
+<svg class="w-full h-8 stroke-secondary fill-none opacity-50" viewbox="0 0 100 20">
+<path d="M0 18 L15 15 L30 17 L45 10 L60 8 L75 12 L90 4 L100 2" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+<!-- Revenue -->
+<div class="glass-card p-6 rounded-lg relative overflow-hidden group">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-on-surface-variant text-xs font-label uppercase tracking-widest mb-1">Total Revenue</p>
+<h3 class="text-3xl font-headline font-bold text-on-surface">₹4.2L</h3>
+</div>
+<div class="w-10 h-10 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</div>
+</div>
+<div class="flex items-center gap-2 text-[10px] text-green-400 font-bold mb-4">
+<span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span>
+          15.2% increase
+        </div>
+<svg class="w-full h-8 stroke-tertiary fill-none opacity-50" viewbox="0 0 100 20">
+<path d="M0 10 L20 12 L40 5 L60 8 L80 2 L100 1" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+<!-- Upcoming Muhurtas -->
+<div class="glass-card p-6 rounded-lg relative overflow-hidden group">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-on-surface-variant text-xs font-label uppercase tracking-widest mb-1">Active Muhurtas</p>
+<h3 class="text-3xl font-headline font-bold text-on-surface">18</h3>
+</div>
+<div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined" data-icon="wb_sunny">wb_sunny</span>
+</div>
+</div>
+<div class="flex items-center gap-2 text-[10px] text-primary font-bold mb-4">
+<span class="material-symbols-outlined text-xs" data-icon="schedule">schedule</span>
+          3 Next 24 Hours
+        </div>
+<svg class="w-full h-8 stroke-on-surface fill-none opacity-50" viewbox="0 0 100 20">
+<path d="M0 10 L10 10 L20 10 L30 10 L40 10 L50 10 L60 10 L70 10 L80 10 L90 10 L100 10" stroke-dasharray="2 4" stroke-width="2"></path>
+</svg>
+</div>
+</section>
+<!-- Main Grid: Chart and Widgets -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Chart Area -->
+<div class="lg:col-span-2 glass-card rounded-lg p-8">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h2 class="text-xl font-headline font-bold text-on-surface">Celestial Heatmap</h2>
+<p class="text-xs text-on-surface-variant">Consultation frequency across lunar cycles</p>
+</div>
+<div class="flex gap-2">
+<button class="px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold border border-primary/20">MONTHLY</button>
+<button class="px-3 py-1 rounded-full text-on-surface-variant text-[10px] font-bold hover:bg-surface-container-high transition-colors">QUARTERLY</button>
+</div>
+</div>
+<!-- Mock Heatmap Grid -->
+<div class="grid grid-cols-7 gap-2">
+<!-- Weekday Labels -->
+<div class="text-[10px] text-center font-bold text-on-surface-variant uppercase tracking-tighter mb-2">Sun</div>
+<div class="text-[10px] text-center font-bold text-on-surface-variant uppercase tracking-tighter mb-2">Mon</div>
+<div class="text-[10px] text-center font-bold text-on-surface-variant uppercase tracking-tighter mb-2">Tue</div>
+<div class="text-[10px] text-center font-bold text-on-surface-variant uppercase tracking-tighter mb-2">Wed</div>
+<div class="text-[10px] text-center font-bold text-on-surface-variant uppercase tracking-tighter mb-2">Thu</div>
+<div class="text-[10px] text-center font-bold text-on-surface-variant uppercase tracking-tighter mb-2">Fri</div>
+<div class="text-[10px] text-center font-bold text-on-surface-variant uppercase tracking-tighter mb-2">Sat</div>
+<!-- Heatmap Cells -->
+<!-- Row 1 -->
+<div class="h-10 rounded bg-primary/5 border border-primary/5"></div>
+<div class="h-10 rounded bg-primary/20 border border-primary/10"></div>
+<div class="h-10 rounded bg-primary/10 border border-primary/5"></div>
+<div class="h-10 rounded bg-primary/40 border border-primary/20"></div>
+<div class="h-10 rounded bg-primary/60 border border-primary/30"></div>
+<div class="h-10 rounded bg-primary/20 border border-primary/10"></div>
+<div class="h-10 rounded bg-primary/10 border border-primary/5"></div>
+<!-- Row 2 -->
+<div class="h-10 rounded bg-primary/10 border border-primary/5"></div>
+<div class="h-10 rounded bg-primary/30 border border-primary/15"></div>
+<div class="h-10 rounded bg-primary/70 border border-primary/40"></div>
+<div class="h-10 rounded bg-primary/90 border border-primary/50 shadow-lg shadow-primary/10"></div>
+<div class="h-10 rounded bg-primary/50 border border-primary/25"></div>
+<div class="h-10 rounded bg-primary/20 border border-primary/10"></div>
+<div class="h-10 rounded bg-primary/10 border border-primary/5"></div>
+<!-- Row 3 -->
+<div class="h-10 rounded bg-primary/15 border border-primary/5"></div>
+<div class="h-10 rounded bg-primary/40 border border-primary/20"></div>
+<div class="h-10 rounded bg-primary/20 border border-primary/10"></div>
+<div class="h-10 rounded bg-primary/30 border border-primary/15"></div>
+<div class="h-10 rounded bg-primary/20 border border-primary/10"></div>
+<div class="h-10 rounded bg-primary/60 border border-primary/30"></div>
+<div class="h-10 rounded bg-primary/80 border border-primary/40 shadow-lg shadow-primary/10"></div>
+<!-- Row 4 -->
+<div class="h-10 rounded bg-primary/5 border border-primary/5"></div>
+<div class="h-10 rounded bg-primary/10 border border-primary/5"></div>
+<div class="h-10 rounded bg-primary/5 border border-primary/5"></div>
+<div class="h-10 rounded bg-primary/15 border border-primary/5"></div>
+<div class="h-10 rounded bg-primary/10 border border-primary/5"></div>
+<div class="h-10 rounded bg-primary/5 border border-primary/5"></div>
+<div class="h-10 rounded bg-primary/5 border border-primary/5"></div>
+</div>
+<div class="mt-8 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded bg-primary/10"></span>
+<span class="text-[10px] text-on-surface-variant font-bold uppercase tracking-wider">Low Flow</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded bg-primary"></span>
+<span class="text-[10px] text-on-surface-variant font-bold uppercase tracking-wider">High Alignment</span>
+</div>
+</div>
+<div class="text-[10px] italic text-on-surface-variant/60 uppercase">Updated every lunar transition</div>
+</div>
+</div>
+<!-- Planetary Positions Widget -->
+<div class="lg:col-span-1 glass-card rounded-lg p-6 relative overflow-hidden">
+<div class="mb-6 relative z-10">
+<h2 class="text-xl font-headline font-bold text-on-surface mb-1">Planetary Pulse</h2>
+<p class="text-xs text-on-surface-variant">Today: Bhadrapada, Shukla Paksha</p>
+</div>
+<div class="space-y-4 relative z-10">
+<div class="flex items-center justify-between p-3 bg-surface-container-high/50 rounded-lg border border-primary/5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">Su</div>
+<div>
+<p class="text-xs font-bold text-on-surface">Surya</p>
+<p class="text-[10px] text-on-surface-variant">Simha Rashi</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-[10px] font-bold text-primary">Strong</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-high/50 rounded-lg border border-primary/5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center text-secondary text-sm font-bold">Mo</div>
+<div>
+<p class="text-xs font-bold text-on-surface">Chandra</p>
+<p class="text-[10px] text-on-surface-variant">Kanya Rashi</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-[10px] font-bold text-secondary">Balanced</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 bg-error/10 rounded-lg border border-error/20">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-error/20 flex items-center justify-center text-error text-sm font-bold">Ma</div>
+<div>
+<p class="text-xs font-bold text-on-surface">Mangala</p>
+<p class="text-[10px] text-on-surface-variant">Vrishabha Rashi</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-[10px] font-bold text-error">Combust</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 bg-tertiary/10 rounded-lg border border-tertiary/20">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary/20 flex items-center justify-center text-tertiary text-sm font-bold">Me</div>
+<div>
+<p class="text-xs font-bold text-on-surface">Budha</p>
+<p class="text-[10px] text-on-surface-variant">Karka Rashi</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-[10px] font-bold text-tertiary">Direct</span>
+</div>
+</div>
+</div>
+<!-- Abstract Mandala Background Element -->
+<div class="absolute -right-20 -bottom-20 w-64 h-64 border border-primary/5 rounded-full opacity-20 pointer-events-none">
+<div class="absolute inset-4 border border-primary/10 rounded-full"></div>
+<div class="absolute inset-8 border border-primary/5 rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Bottom Section: Recent Consultation Requests -->
+<section class="mt-8 glass-card rounded-lg overflow-hidden">
+<div class="px-8 py-6 border-b border-outline-variant/5 flex justify-between items-center">
+<h2 class="text-xl font-headline font-bold text-on-surface">Recent Consultation Requests</h2>
+<button class="text-xs text-primary font-bold hover:underline">View All Records</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-8 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Client</th>
+<th class="px-8 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Zodiac Sign</th>
+<th class="px-8 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Service Type</th>
+<th class="px-8 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Status</th>
+<th class="px-8 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Requested</th>
+<th class="px-8 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center overflow-hidden">
+<img alt="Aditya Avatar" class="w-full h-full object-cover" data-alt="Client avatar for Aditya" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDokFdC5KscxsY84WNV-b5CDtiKujRBGAC-2mmof-hl6Zq613Bj57vqFhPaHzCASEyAF7NkaSF81D9WL-vEDoKQxCbgEfxGnXHtznZJvDnSDRKk7SDj-Rf6VeMrNX0wxCDVsSnZos3YAM7w2oirRKK3JCpBCQJoF1ksBZXck7k1KilvXefmek5F1oC_6CQAZoDtmUKWHHJ-5YRvjxkNqUe1_yjjqAleyQnqTu80ISwzzyJudLHrJu39LR-qMJ5Uhb5BMoh4drKABQWR"/>
+</div>
+<span class="text-sm font-semibold text-on-surface">Aditya Sharma</span>
+</div>
+</td>
+<td class="px-8 py-4">
+<span class="px-2 py-1 rounded-full bg-secondary-container/30 text-secondary text-[10px] font-bold border border-secondary/10 uppercase tracking-tighter">Leo</span>
+</td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">Career &amp; Wealth Chart</td>
+<td class="px-8 py-4">
+<span class="px-2 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold border border-primary/20 uppercase">New</span>
+</td>
+<td class="px-8 py-4 text-xs text-on-surface-variant">2 hours ago</td>
+<td class="px-8 py-4">
+<button class="w-8 h-8 rounded-full hover:bg-surface-container-highest flex items-center justify-center text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center overflow-hidden">
+<img alt="Priya Avatar" class="w-full h-full object-cover" data-alt="Client avatar for Priya" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALWke41GRr7LDqFX6iCLtKrMkSZErBQIYD8GUtQcj55-yueaQvuSXXoCjlz--UKX4lR5KGEY7w7sJeHv0qoDlIHR7nCLOYR_GQe17JsBMOPA4dtSuIoL7CkDP_W2c2-TtWcOhh09z5NvbSfbgmyQBnAXWnE8xLA1pjrjkJ6TcDy0fCNxBrPmE-i4-tdomGLtSQLLgS-Qp8_1bR4vNcEn5W6v5wgifwdE1b4kWmHVkFJnFxMJqVi1xS242t_xI91fz6PPwgaWOt0wml"/>
+</div>
+<span class="text-sm font-semibold text-on-surface">Priya Kapur</span>
+</div>
+</td>
+<td class="px-8 py-4">
+<span class="px-2 py-1 rounded-full bg-secondary-container/30 text-secondary text-[10px] font-bold border border-secondary/10 uppercase tracking-tighter">Scorpio</span>
+</td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">Relationship Synastry</td>
+<td class="px-8 py-4">
+<span class="px-2 py-1 rounded-full bg-green-500/10 text-green-400 text-[10px] font-bold border border-green-500/20 uppercase">Paid</span>
+</td>
+<td class="px-8 py-4 text-xs text-on-surface-variant">5 hours ago</td>
+<td class="px-8 py-4">
+<button class="w-8 h-8 rounded-full hover:bg-surface-container-highest flex items-center justify-center text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center overflow-hidden">
+<img alt="Rahul Avatar" class="w-full h-full object-cover" data-alt="Client avatar for Rahul" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7mceiBy3BaKdahQYYrnH1EBnkvqzPpshaR1r2Tg1rsSL0RN6J1eQqp1nXfgNFfqdeI5daw2CrPpRvMarggfp8RtFpcZrhUexMggEyGoeVGAUsx8FFFXeOAds7VkOhRkxHRbH39IaxGrFbydfO06yLHPz8f6achaDBPEdpK-ElaG_kIYAybAWZqU5RTJManqvhhA-RqqiTGKIWMoRog2J2Vv5MvSAXnT_mcbMvALqfbOQRCIBX9QScZ_GXW58lrHDrYiZyQZo7Ley6"/>
+</div>
+<span class="text-sm font-semibold text-on-surface">Rahul Vats</span>
+</div>
+</td>
+<td class="px-8 py-4">
+<span class="px-2 py-1 rounded-full bg-secondary-container/30 text-secondary text-[10px] font-bold border border-secondary/10 uppercase tracking-tighter">Gemini</span>
+</td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">Kalsarpa Dosha Analysis</td>
+<td class="px-8 py-4">
+<span class="px-2 py-1 rounded-full bg-amber-500/10 text-amber-400 text-[10px] font-bold border border-amber-500/20 uppercase">Rescheduled</span>
+</td>
+<td class="px-8 py-4 text-xs text-on-surface-variant">Yesterday</td>
+<td class="px-8 py-4">
+<button class="w-8 h-8 rounded-full hover:bg-surface-container-highest flex items-center justify-center text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+<!-- Floating Action Button for Dashboard -->
+<button class="fixed bottom-8 right-8 w-16 h-16 rounded-full gold-gradient shadow-2xl shadow-primary/40 text-on-primary flex items-center justify-center z-50 hover:scale-110 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="auto_fix">auto_fix</span>
+</button>
+</body></html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#f0c040",
+              "primary": "#e6c364",
+              "outline-variant": "#4d4637",
+              "on-tertiary-fixed-variant": "#5a4400",
+              "on-secondary-fixed": "#2a064b",
+              "on-surface-variant": "#d0c5b2",
+              "surface-container-highest": "#442959",
+              "on-tertiary-container": "#513d00",
+              "surface-dim": "#200436",
+              "on-tertiary": "#3e2e00",
+              "secondary-fixed": "#efdbff",
+              "on-background": "#f2daff",
+              "on-surface": "#f2daff",
+              "on-primary-fixed-variant": "#584400",
+              "on-primary-fixed": "#241a00",
+              "surface-container-high": "#381e4e",
+              "on-primary-container": "#503d00",
+              "surface-container-lowest": "#1a0030",
+              "inverse-on-surface": "#3f2455",
+              "surface-tint": "#e6c364",
+              "inverse-primary": "#755b00",
+              "surface-container-low": "#290e3e",
+              "secondary": "#dcb8ff",
+              "on-tertiary-fixed": "#251a00",
+              "primary-container": "#c9a84c",
+              "outline": "#99907e",
+              "error-container": "#93000a",
+              "tertiary-container": "#d2a525",
+              "primary-fixed": "#ffe08f",
+              "tertiary-fixed": "#ffdf97",
+              "tertiary-fixed-dim": "#f0c040",
+              "on-secondary-container": "#cfa9f4",
+              "inverse-surface": "#f2daff",
+              "surface-container": "#2d1342",
+              "background": "#200436",
+              "secondary-container": "#5a3a7c",
+              "on-error": "#690005",
+              "secondary-fixed-dim": "#dcb8ff",
+              "surface": "#200436",
+              "surface-bright": "#482d5e",
+              "on-error-container": "#ffdad6",
+              "on-secondary-fixed-variant": "#583879",
+              "surface-variant": "#442959",
+              "primary-fixed-dim": "#e6c364",
+              "on-secondary": "#402061",
+              "on-primary": "#3d2e00",
+              "error": "#ffb4ab"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .cosmic-radial {
+            background: radial-gradient(circle at center, #2d1342 0%, #1a0030 100%);
+        }
+        .orbit-container {
+            position: relative;
+            width: 320px;
+            height: 320px;
+        }
+        .zodiac-icon {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            color: #e6c364;
+            opacity: 0.6;
+        }
+        /* Positioning icons manually to simulate orbital arc without JS animations */
+        .pos-1 { top: 0; left: 50%; transform: translateX(-50%); }
+        .pos-2 { top: 15%; right: 15%; }
+        .pos-3 { top: 50%; right: 0; transform: translateY(-50%); }
+        .pos-4 { bottom: 15%; right: 15%; }
+        .pos-5 { bottom: 0; left: 50%; transform: translateX(-50%); }
+        .pos-6 { bottom: 15%; left: 15%; }
+        .pos-7 { top: 50%; left: 0; transform: translateY(-50%); }
+        .pos-8 { top: 15%; left: 15%; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+<!-- TopAppBar -->
+<nav class="bg-[#200436]/80 backdrop-blur-xl text-[#d0c5b2] font-['Noto_Serif'] tracking-wide docked full-width top-0 sticky z-50 no-border bg-gradient-to-b from-[#1a0030] to-transparent shadow-[0px_20px_40px_rgba(13,0,24,0.6)] flex justify-between items-center w-full px-8 py-4 max-w-full">
+<div class="text-2xl font-bold text-[#e6c364] font-['Noto_Serif'] italic hover:scale-105 transition-transform duration-300 cursor-pointer">
+            Trikaal
+        </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#d0c5b2] hover:text-[#e6c364] transition-colors" href="#">Home</a>
+<a class="text-[#e6c364] border-b-2 border-[#e6c364] pb-1" href="#">Services</a>
+<a class="text-[#d0c5b2] hover:text-[#e6c364] transition-colors" href="#">About</a>
+<a class="text-[#d0c5b2] hover:text-[#e6c364] transition-colors" href="#">Contact</a>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform duration-300">
+            Book Consultation
+        </button>
+</nav>
+<!-- Main Content Canvas -->
+<main class="min-h-screen relative flex flex-col items-center justify-center px-4 py-20 overflow-hidden cosmic-radial">
+<!-- Subtle Constellation Background Element -->
+<div class="absolute inset-0 opacity-20 pointer-events-none" data-alt="Faint golden constellation lines and stars">
+<svg class="w-full h-full" fill="none" viewbox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+<circle cx="200" cy="200" fill="#e6c364" r="1"></circle>
+<circle cx="800" cy="150" fill="#e6c364" r="1.5"></circle>
+<circle cx="500" cy="500" fill="#e6c364" r="0.5"></circle>
+<circle cx="100" cy="800" fill="#e6c364" r="1"></circle>
+<circle cx="900" cy="700" fill="#e6c364" r="1.2"></circle>
+<path d="M200 200L150 300M800 150L850 250M100 800L200 750" stroke="#e6c364" stroke-width="0.5"></path>
+</svg>
+</div>
+<!-- Section Heading -->
+<div class="text-center mb-16 relative z-10">
+<span class="text-primary font-label text-sm uppercase tracking-[0.2em] mb-4 block">The Guiding Light</span>
+<h1 class="text-4xl md:text-5xl font-headline text-primary mb-2 font-bold italic">Meet Our Senior Consultant</h1>
+<div class="h-1 w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-6 opacity-40"></div>
+</div>
+<!-- Consultant Card (Bento/Editorial Style) -->
+<div class="relative z-10 w-full max-w-4xl bg-surface-container-high/40 backdrop-blur-md rounded-xl p-8 md:p-12 shadow-[0px_20px_40px_rgba(13,0,24,0.6)] border border-primary/10 group">
+<div class="flex flex-col items-center text-center">
+<!-- Profile Section -->
+<div class="orbit-container mb-8 flex items-center justify-center">
+<!-- Orbiting Icons (Static representation of celestial motion) -->
+<span class="material-symbols-outlined zodiac-icon pos-1">flare</span>
+<span class="material-symbols-outlined zodiac-icon pos-2">star_rate</span>
+<span class="material-symbols-outlined zodiac-icon pos-3">brightness_7</span>
+<span class="material-symbols-outlined zodiac-icon pos-4">auto_awesome</span>
+<span class="material-symbols-outlined zodiac-icon pos-5">brightness_low</span>
+<span class="material-symbols-outlined zodiac-icon pos-6">nights_stay</span>
+<span class="material-symbols-outlined zodiac-icon pos-7">wb_sunny</span>
+<span class="material-symbols-outlined zodiac-icon pos-8">all_inclusive</span>
+<!-- Profile Photo Frame -->
+<div class="relative w-48 h-48 rounded-full p-1.5 bg-gradient-to-tr from-primary via-primary-container to-tertiary shadow-[0_0_40px_rgba(230,195,100,0.3)] group-hover:shadow-[0_0_60px_rgba(230,195,100,0.5)] transition-all duration-500">
+<div class="w-full h-full rounded-full overflow-hidden bg-surface-container-highest">
+<img alt="Smeet - Senior Consultant" class="w-full h-full object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700" data-alt="Portrait of a professional man in elegant traditional attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQTFjSpD78Skg2dqyA_M4Lu9iBJywp_YcsExCA-OlAxtNzsZ0h5QWj4XfkFFjDi6KQJKbzk7Qxe3ID0AEWvPqH0ORMuFhfyp_-7zutEmPFdIqy-RAT0U4odYdTYvWrcld72fbqtm0AmcYuq4RoaasRVW8BsSfjevuEeRA4mp0LW2OVNtbJGgOSk57G88U5E3nH_ghnBj4ezs71cOwkQdhCTUwW5bbG916X3BBZPdvtu0RPvBtqVmQ2PYVCMR1AmLof0yNBHa79Heqm"/>
+</div>
+</div>
+</div>
+<!-- Identity Section -->
+<div class="mb-10">
+<h2 class="text-5xl md:text-6xl font-headline text-primary font-bold tracking-tight mb-2">Smeet</h2>
+<p class="text-on-surface-variant font-label tracking-widest uppercase text-xs">Principal Jyotish Acharya</p>
+</div>
+<!-- Credential Badges (Asymmetric Flow) -->
+<div class="flex flex-wrap justify-center gap-3 mb-12 max-w-2xl">
+<span class="px-5 py-2 rounded-full border border-primary/20 bg-surface-container-low text-on-surface-variant text-sm flex items-center gap-2 hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-primary text-lg">calendar_month</span>
+                        3+ Years in Jyotish &amp; Vastu Shastra
+                    </span>
+<span class="px-5 py-2 rounded-full border border-primary/20 bg-surface-container-low text-on-surface-variant text-sm flex items-center gap-2 hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-primary text-lg">school</span>
+                        Mentored by Top Gurus
+                    </span>
+<span class="px-5 py-2 rounded-full border border-primary/20 bg-surface-container-low text-on-surface-variant text-sm flex items-center gap-2 hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-primary text-lg">translate</span>
+                        Speaks English, Hindi &amp; Gujarati
+                    </span>
+<span class="px-5 py-2 rounded-full border border-primary/20 bg-surface-container-low text-on-surface-variant text-sm flex items-center gap-2 hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-primary text-lg">verified</span>
+                        Practical &amp; Up-to-Date Remedies
+                    </span>
+</div>
+<!-- Quote Block -->
+<div class="relative max-w-lg mb-12">
+<span class="material-symbols-outlined absolute -top-6 -left-8 text-primary/20 text-5xl">format_quote</span>
+<p class="text-2xl font-headline italic text-on-surface-variant leading-relaxed">
+                        "I don't just read your chart — I help you rewrite your destiny."
+                    </p>
+<span class="material-symbols-outlined absolute -bottom-6 -right-8 text-primary/20 text-5xl rotate-180">format_quote</span>
+</div>
+<!-- Primary CTA -->
+<button class="relative group/btn overflow-hidden bg-gradient-to-br from-primary to-primary-container text-on-primary px-10 py-5 rounded-full font-bold text-lg shadow-xl hover:scale-105 active:scale-95 transition-all duration-300">
+<span class="relative z-10 flex items-center gap-3">
+                        Book a Session with Smeet
+                        <span class="material-symbols-outlined">event_available</span>
+</span>
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1a0030] full-width relative overflow-hidden tonal-shift from surface-container-lowest grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 w-full border-t border-primary/5">
+<div class="md:col-span-1">
+<div class="text-3xl font-bold text-[#e6c364] font-['Noto_Serif'] mb-4">Trikaal</div>
+<p class="text-[#d0c5b2]/70 font-['Manrope'] text-sm leading-relaxed">
+                Navigating the celestial currents to find your true purpose through ancient Vedic wisdom.
+            </p>
+</div>
+<div>
+<h4 class="text-[#e6c364] font-bold mb-6">Explore</h4>
+<ul class="space-y-4">
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] font-['Manrope'] text-sm hover:translate-x-1 transition-transform duration-200 block" href="#">Vedic Wisdom</a></li>
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] font-['Manrope'] text-sm hover:translate-x-1 transition-transform duration-200 block" href="#">Consultation Guide</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-[#e6c364] font-bold mb-6">Legal</h4>
+<ul class="space-y-4">
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] font-['Manrope'] text-sm hover:translate-x-1 transition-transform duration-200 block" href="#">Privacy Policy</a></li>
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] font-['Manrope'] text-sm hover:translate-x-1 transition-transform duration-200 block" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-[#e6c364] font-bold mb-6">Newsletter</h4>
+<div class="flex gap-2">
+<input class="bg-surface-container-low border-none rounded-lg p-3 text-sm focus:ring-1 focus:ring-primary w-full text-on-surface" placeholder="Email Address" type="email"/>
+<button class="bg-primary text-on-primary p-3 rounded-lg hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+<div class="md:col-span-4 border-t border-primary/10 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center text-[#d0c5b2]/50 text-xs gap-4">
+<p>© 2024 Trikaal Celestial Archive. All Sacred Rights Reserved.</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined hover:text-[#e6c364] cursor-pointer transition-colors" style="font-variation-settings: 'FILL' 1;">public</span>
+<span class="material-symbols-outlined hover:text-[#e6c364] cursor-pointer transition-colors" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined hover:text-[#e6c364] cursor-pointer transition-colors" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+</div>
+</footer>
+</body></html>

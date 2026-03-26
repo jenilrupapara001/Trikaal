@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vedic Wisdom | The Celestial Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#f0c040",
+              "on-tertiary-fixed-variant": "#5a4400",
+              "secondary": "#dcb8ff",
+              "on-tertiary-container": "#513d00",
+              "primary-fixed": "#ffe08f",
+              "inverse-primary": "#755b00",
+              "surface-variant": "#442959",
+              "surface-container": "#2d1342",
+              "on-secondary-fixed-variant": "#583879",
+              "error-container": "#93000a",
+              "on-tertiary": "#3e2e00",
+              "primary": "#e6c364",
+              "on-tertiary-fixed": "#251a00",
+              "tertiary-fixed-dim": "#f0c040",
+              "tertiary-container": "#d2a525",
+              "surface-tint": "#e6c364",
+              "surface-container-low": "#290e3e",
+              "error": "#ffb4ab",
+              "outline-variant": "#4d4637",
+              "on-secondary-container": "#cfa9f4",
+              "surface-container-highest": "#442959",
+              "on-secondary-fixed": "#2a064b",
+              "on-primary-fixed-variant": "#584400",
+              "surface-container-lowest": "#1a0030",
+              "secondary-container": "#5a3a7c",
+              "surface-dim": "#200436",
+              "secondary-fixed-dim": "#dcb8ff",
+              "on-primary-fixed": "#241a00",
+              "inverse-surface": "#f2daff",
+              "on-primary-container": "#503d00",
+              "on-surface-variant": "#d0c5b2",
+              "primary-fixed-dim": "#e6c364",
+              "on-surface": "#f2daff",
+              "on-error-container": "#ffdad6",
+              "surface": "#200436",
+              "on-primary": "#3d2e00",
+              "outline": "#99907e",
+              "on-error": "#690005",
+              "surface-bright": "#482d5e",
+              "on-secondary": "#402061",
+              "secondary-fixed": "#efdbff",
+              "tertiary-fixed": "#ffdf97",
+              "primary-container": "#c9a84c",
+              "background": "#200436",
+              "on-background": "#f2daff",
+              "inverse-on-surface": "#3f2455",
+              "surface-container-high": "#381e4e"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #200436;
+            background-image: radial-gradient(circle at 50% 50%, rgba(68, 41, 89, 0.15) 0%, transparent 80%);
+            overflow-x: hidden;
+        }
+        .star-field {
+            background-image: 
+                radial-gradient(1px 1px at 20px 30px, #d0c5b2, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 100px 150px, #e6c364, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 200px 50px, #d0c5b2, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 300px 250px, #e6c364, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 400px 400px;
+            opacity: 0.3;
+        }
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+        }
+    </style>
+</head>
+<body class="font-body text-on-surface-variant selection:bg-primary/30 selection:text-primary">
+<div class="fixed inset-0 star-field pointer-events-none"></div>
+<!-- TopAppBar -->
+<header class="bg-[#200436] dark:bg-[#200436] shadow-[0_10px_30px_rgba(13,0,24,0.4)] docked full-width top-0 z-50 sticky">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-serif italic text-[#e6c364] drop-shadow-[0_0_8px_rgba(230,195,100,0.4)]">Vedic Wisdom</span>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="font-serif text-[#d0c5b2] hover:text-[#f0c040] transition-all duration-500 ease-out text-[#f0c040] border-b-2 border-[#e6c364] pb-1" href="#">Archive</a>
+<a class="font-serif text-[#d0c5b2] hover:text-[#f0c040] transition-all duration-500 ease-out" href="#">Horoscopes</a>
+<a class="font-serif text-[#d0c5b2] hover:text-[#f0c040] transition-all duration-500 ease-out" href="#">Consultations</a>
+<a class="font-serif text-[#d0c5b2] hover:text-[#f0c040] transition-all duration-500 ease-out" href="#">Panchang</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#e6c364] cursor-pointer hover:scale-110 transition-transform">search</span>
+<span class="material-symbols-outlined text-[#e6c364] cursor-pointer hover:scale-110 transition-transform" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+<div class="h-px w-full bg-gradient-to-r from-transparent via-[#e6c364]/20 to-transparent"></div>
+</header>
+<main class="relative z-10 max-w-7xl mx-auto px-6 py-20">
+<!-- Hero Section -->
+<div class="mb-32 relative">
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-primary/5 rounded-full blur-[100px]"></div>
+<div class="max-w-3xl">
+<p class="font-label text-sm tracking-[0.3em] text-primary uppercase mb-6 flex items-center gap-3">
+<span class="w-12 h-px bg-primary/40"></span>
+                    The Celestial Archive
+                </p>
+<h1 class="font-headline text-5xl md:text-7xl text-primary leading-tight tracking-tight mb-8">
+                    Ancient Wisdom for the <br/><i class="font-serif opacity-80">Modern Soul</i>
+</h1>
+<p class="text-xl text-on-surface-variant font-light leading-relaxed max-w-xl">
+                    Explore the sacred dimensions of existence. From the movement of the stars to the harmony of your home, discover the timeless rhythms of the cosmos.
+                </p>
+</div>
+</div>
+<!-- Editorial Blog Grid -->
+<section class="editorial-grid">
+<!-- Featured Article (Asymmetric Large) -->
+<article class="col-span-12 lg:col-span-8 group">
+<div class="relative overflow-hidden rounded-lg bg-surface-container-highest mb-6">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim via-transparent to-transparent z-10 opacity-60"></div>
+<img alt="Ancient Manuscript" class="w-full h-[500px] object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="Ancient Sanskrit manuscript under soft warm light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCovmLLZk0Fue3nxtX8Gl6qtBDEbLHnYx6ZaYj23oCP2g_eUPwFjyvFZvimRjJXLYuleI7Y6AAXjsmVJe9aXplQDO4VzBJjeaAvsSsIg03PZGakYhjIDCx89zcYtffvAkeDAzz1qJu8N2_S4OZFI0hZqIMtnP8RXFO5Jx38djV1PbH6L4SoxHZb7NnzzKasyK3GgIwck4-ZWJ3S3-nDvYoAW5mLbmlt0zpTeXpB9L_PFGx05Ys3xg8DxH9cn8_1cQyXKa6w7_3VgJay"/>
+<div class="absolute top-6 left-6 z-20">
+<span class="bg-surface-dim/80 backdrop-blur-md px-4 py-2 rounded-full border border-primary/20 text-primary text-xs tracking-widest uppercase">Philosophy</span>
+</div>
+</div>
+<div class="max-w-2xl">
+<h2 class="font-headline text-4xl text-primary mb-4 leading-tight group-hover:text-tertiary transition-colors">The Secret of Saptarishis: Navigating Life with the Seven Sages</h2>
+<p class="text-on-surface-variant text-lg mb-6 leading-relaxed">
+                        Beyond the Great Bear lies a cosmic blueprint. Discover how the ancient seers continue to influence the spiritual architecture of the modern seeker.
+                    </p>
+<a class="inline-flex items-center gap-2 text-primary font-label text-sm uppercase tracking-widest border-b border-primary/20 pb-1 group-hover:border-primary transition-all" href="#">
+                        Read More <span class="material-symbols-outlined text-sm">north_east</span>
+</a>
+</div>
+</article>
+<!-- Sidebar/Secondary Articles -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-12">
+<!-- Article 2 -->
+<article class="group">
+<div class="relative overflow-hidden rounded-lg bg-surface-container-highest mb-4">
+<img alt="Modern Vastu" class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Modern architectural space with natural lighting and vastu elements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2wQt_nbtgFKJTscLBC3PQ44FnpCZUNa900NuTpwq62mxRui8LbVKZUTjDv6NsTQC-e-ihJVxOnEPY-Q-QVapDLtQi1m2AAFHB4XT8eOrYmFP1Q0SPtZY6r0Ds7bOSPOUkM9GbjnbnDwp4iht5ArjVAazvUbOdX7HcN_Wi7UPgi7-YJPPy_U92dlFbaBrhkR4HFCyXOffAMvg2bCmZg_uJmo_OMc-BZneyAA_vRGeaIOCW7mdYxEHwgxCKmyaCY0jMTROzrV3Ow6jY"/>
+</div>
+<h3 class="font-headline text-2xl text-primary mb-3 leading-snug group-hover:text-tertiary transition-colors">Vastu for Modern Spaces</h3>
+<p class="text-on-surface-variant text-sm mb-4 leading-relaxed line-clamp-2">
+                        Harmonize your sanctuary without compromising on contemporary aesthetics through these sacred geometric principles.
+                    </p>
+<a class="text-primary font-label text-xs uppercase tracking-widest flex items-center gap-1 group-hover:gap-2 transition-all" href="#">
+                        Deep Dive <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</article>
+<!-- Article 3 -->
+<article class="group">
+<div class="relative overflow-hidden rounded-lg bg-surface-container-highest mb-4">
+<img alt="Moon Sign" class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Phases of the moon against a starry deep purple sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmmG5ky6Q_EsNbW5aX-JUMoiBM-WkBUExBgz8otyQ86WE6MA_t_vYbUBTMd0GxPx3qek_HTvptXYJzfvgnP8P_qc7nm2cHnsyEdRCpzvHib4nDHNCWWQQQA0IPlblYIFxX-OlyLlbxsCo8vxfxizcFiYn8B2e8tf2EKx8k6voBaPhGo5a8hu60XZbXJzsacLLnLbzCZQEzWxxHbug6xrU3NDd89XIhNem79XWNAuzZQiC5jNoKUyLq7wKJzio0Ngif1kUyZydGUZ5c"/>
+</div>
+<h3 class="font-headline text-2xl text-primary mb-3 leading-snug group-hover:text-tertiary transition-colors">Understanding Your Moon Sign</h3>
+<p class="text-on-surface-variant text-sm mb-4 leading-relaxed line-clamp-2">
+                        In Vedic astrology, the mind is governed by the moon. Learn how Chandra influences your emotional landscape and subconscious.
+                    </p>
+<a class="text-primary font-label text-xs uppercase tracking-widest flex items-center gap-1 group-hover:gap-2 transition-all" href="#">
+                        Discover <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</article>
+</div>
+<!-- Full Width Breakout / Quote -->
+<div class="col-span-12 py-20">
+<div class="relative p-12 rounded-xl bg-surface-container-low border border-primary/5 text-center overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-32 -mt-32"></div>
+<span class="material-symbols-outlined text-5xl text-primary/20 mb-6">format_quote</span>
+<blockquote class="font-headline text-3xl md:text-4xl text-primary italic max-w-4xl mx-auto leading-relaxed">
+                        "The stars within us reflect the stars above us. Knowledge is the bridge that spans the celestial divide."
+                    </blockquote>
+<cite class="block mt-6 font-label text-sm uppercase tracking-widest text-on-surface-variant/60">— Brihadaranyaka Upanishad</cite>
+</div>
+</div>
+<!-- Secondary Grid Row -->
+<article class="col-span-12 md:col-span-6 lg:col-span-4 group">
+<div class="relative h-80 overflow-hidden rounded-lg mb-6">
+<img alt="Stellar Map" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="Abstract galactic nebula in gold and deep purple tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkZDOJLKwEZVogQnLD5dS2_ecJ3kPvyCMGvGi6Tb5jl3Vp7hzLdqnifBT9Tjl4-eTNpmvxEw3ZxCTruE10gotkQ8aynL0Jybjus_0GuNrsqNr13GZ3vScj3vfdL-fDr_R1YVpBkuD2uaSG0Zx6rwz2iOP49_aYtMSYL4ZFPtsTG-v5W3Hef5DqdvvyVG5ZE1YOSRKf_p5teXsafi7Z_rXQEG82lddoalYigqaVqv8fXQqnfZ1Wrx06Q01p14uLmrZ7uQpnbAhbWVmg"/>
+</div>
+<h3 class="font-headline text-2xl text-primary mb-3">Karmic Coordinates</h3>
+<p class="text-on-surface-variant mb-6 leading-relaxed">
+                    How the placement of Shani (Saturn) reveals your life's primary challenges and the lessons awaiting mastery.
+                </p>
+<a class="text-primary font-label text-xs uppercase tracking-widest border-b border-primary/10 pb-1 hover:border-primary transition-all" href="#">Explore Lesson</a>
+</article>
+<article class="col-span-12 md:col-span-6 lg:col-span-4 group">
+<div class="relative h-80 overflow-hidden rounded-lg mb-6">
+<img alt="Temple Rituals" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="Traditional oil lamps flickering in an ancient stone temple" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlXIb8S6CRgiuwWNENBWqZz-eXv3UbJFhu7s1Rw9kafA0TZ61n3DTMoESHy63oMQHrVyJNt-VXRQRADkr6cg7p_OD8Fu2V85MWH4uQEshRKvGqv-wmbXqjPqlntPBsMIS_mF8xZWZQVncArKt_s5j2u84SDzisdZCpKSpvguuy6BBTWcTUw8bsPbnJUE_AJXP_PGQE0Ag_U5QojIz5FFzy20gxSToez-P2haJ0yGIY8Wg3kaPgx3nKSiufn-QILvT3rfyh07K6q2Mm"/>
+</div>
+<h3 class="font-headline text-2xl text-primary mb-3">Rituals of Alignment</h3>
+<p class="text-on-surface-variant mb-6 leading-relaxed">
+                    Daily practices from the Atharvaveda to cleanse your aura and recalibrate your home's energetic resonance.
+                </p>
+<a class="text-primary font-label text-xs uppercase tracking-widest border-b border-primary/10 pb-1 hover:border-primary transition-all" href="#">Explore Lesson</a>
+</article>
+<article class="col-span-12 md:col-span-6 lg:col-span-4 group">
+<div class="relative h-80 overflow-hidden rounded-lg mb-6">
+<img alt="Himalayan Morning" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="Sun rising over misty Himalayan mountain peaks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhMVqzunoHzbiyOmIeOiHuMXsQ3QFffPj_2Ig8Sjdsct1ptKpYtCHTX-GYnU2R-RO1DVRbdiqv3BA-H59GqutGyw3nEkOmTgYfxLuj4cylri_HwrSEqffFBdiatNoufm-2Cll9xSNB02zuJE-u3pc5iPsfqUtZRp_S9P-6aXXfq1Uz7Qr8yHeULHHDS6jhGaPBhiHL9CReuyv5PaYWKc3oRjRT9boV3EzSgeUggEQfs2xUD5T2gPMOcueWDJqnCxGUSKLrcg6GovLH"/>
+</div>
+<h3 class="font-headline text-2xl text-primary mb-3">The Solar Return</h3>
+<p class="text-on-surface-variant mb-6 leading-relaxed">
+                    A guide to Varshaphala: Understanding the significance of your birthday in the Vedic cosmic calendar.
+                </p>
+<a class="text-primary font-label text-xs uppercase tracking-widest border-b border-primary/10 pb-1 hover:border-primary transition-all" href="#">Explore Lesson</a>
+</article>
+</section>
+<!-- Newsletter / Subscription Ritual -->
+<section class="mt-32 p-12 bg-surface-container rounded-3xl border border-primary/10 relative overflow-hidden">
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="max-w-md">
+<h2 class="font-headline text-3xl text-primary mb-4">Receive Celestial Updates</h2>
+<p class="text-on-surface-variant">Subscribe to our moon-phase newsletters. We only send transmissions during significant planetary transits.</p>
+</div>
+<div class="w-full md:w-auto flex flex-col sm:flex-row gap-4">
+<input class="bg-surface-dim border border-primary/20 rounded-full px-8 py-4 text-on-surface focus:ring-1 focus:ring-primary focus:border-primary outline-none min-w-[300px] transition-all" placeholder="Your essence (Email)" type="email"/>
+<button class="bg-gradient-to-br from-[#e6c364] to-[#c9a84c] text-[#200436] font-label font-bold uppercase tracking-widest px-10 py-4 rounded-full shadow-[0_0_20px_rgba(230,195,100,0.3)] hover:scale-105 active:scale-95 transition-all">
+                        Subscribe
+                    </button>
+</div>
+</div>
+<!-- Decorative Mandala -->
+<div class="absolute -right-20 -bottom-20 opacity-5 pointer-events-none">
+<svg height="400" viewbox="0 0 100 100" width="400">
+<circle class="text-primary" cx="50" cy="50" fill="none" r="45" stroke="currentColor" stroke-width="0.5"></circle>
+<path class="text-primary" d="M50 5 L55 45 L95 50 L55 55 L50 95 L45 55 L5 50 L45 45 Z" fill="none" stroke="currentColor" stroke-width="0.5"></path>
+</svg>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1a0030] dark:bg-[#1a0030] full-width py-12 px-8 fade-in duration-700">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto border-t border-[#e6c364]/5 mt-20 pt-12 gap-8">
+<div class="flex flex-col gap-2">
+<span class="text-lg font-serif text-[#e6c364]">Vedic Wisdom</span>
+<p class="font-serif italic text-[#d0c5b2]/50 text-sm">© 2024 Vedic Wisdom. Orchestrated by the Cosmic Oracle.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-serif italic text-[#d0c5b2]/50 hover:text-[#f0c040] transition-colors" href="#">Sacred Terms</a>
+<a class="font-serif italic text-[#d0c5b2]/50 hover:text-[#f0c040] transition-colors" href="#">Privacy Rituals</a>
+<a class="font-serif italic text-[#d0c5b2]/50 hover:text-[#f0c040] transition-colors" href="#">Celestial Support</a>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#e6c364]/40 hover:text-[#e6c364] cursor-pointer">public</span>
+<span class="material-symbols-outlined text-[#e6c364]/40 hover:text-[#e6c364] cursor-pointer">temp_preferences_custom</span>
+<span class="material-symbols-outlined text-[#e6c364]/40 hover:text-[#e6c364] cursor-pointer">star</span>
+</div>
+</div>
+</footer>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-[#200436]/80 dark:bg-[#200436]/80 backdrop-blur-xl border-t border-[#e6c364]/10 shadow-[0_-10px_40px_rgba(13,0,24,0.6)] z-50 rounded-t-[2.5rem]">
+<div class="flex flex-col items-center justify-center text-[#d0c5b2]/60 p-3 hover:text-[#e6c364] transition-all duration-300">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium mt-1">Oracle</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-gradient-to-br from-[#e6c364] to-[#c9a84c] text-[#200436] rounded-full p-3 shadow-[0_0_15px_rgba(230,195,100,0.5)] scale-110">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium mt-1">Readings</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#d0c5b2]/60 p-3 hover:text-[#e6c364] transition-all duration-300">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium mt-1">Stars</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#d0c5b2]/60 p-3 hover:text-[#e6c364] transition-all duration-300">
+<span class="material-symbols-outlined">edit_note</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium mt-1">Journal</span>
+</div>
+</nav>
+</body></html>

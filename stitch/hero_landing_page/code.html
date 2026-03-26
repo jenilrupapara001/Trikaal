@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trikaal - Modern Vedic Science</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#f0c040",
+              "primary": "#e6c364",
+              "outline-variant": "#4d4637",
+              "on-tertiary-fixed-variant": "#5a4400",
+              "on-secondary-fixed": "#2a064b",
+              "on-surface-variant": "#d0c5b2",
+              "surface-container-highest": "#442959",
+              "on-tertiary-container": "#513d00",
+              "surface-dim": "#200436",
+              "on-tertiary": "#3e2e00",
+              "secondary-fixed": "#efdbff",
+              "on-background": "#f2daff",
+              "on-surface": "#f2daff",
+              "on-primary-fixed-variant": "#584400",
+              "on-primary-fixed": "#241a00",
+              "surface-container-high": "#381e4e",
+              "on-primary-container": "#503d00",
+              "surface-container-lowest": "#1a0030",
+              "inverse-on-surface": "#3f2455",
+              "surface-tint": "#e6c364",
+              "inverse-primary": "#755b00",
+              "surface-container-low": "#290e3e",
+              "secondary": "#dcb8ff",
+              "on-tertiary-fixed": "#251a00",
+              "primary-container": "#c9a84c",
+              "outline": "#99907e",
+              "error-container": "#93000a",
+              "tertiary-container": "#d2a525",
+              "primary-fixed": "#ffe08f",
+              "tertiary-fixed": "#ffdf97",
+              "tertiary-fixed-dim": "#f0c040",
+              "on-secondary-container": "#cfa9f4",
+              "inverse-surface": "#f2daff",
+              "surface-container": "#2d1342",
+              "background": "#200436",
+              "secondary-container": "#5a3a7c",
+              "on-error": "#690005",
+              "secondary-fixed-dim": "#dcb8ff",
+              "surface": "#200436",
+              "surface-bright": "#482d5e",
+              "on-error-container": "#ffdad6",
+              "on-secondary-fixed-variant": "#583879",
+              "surface-variant": "#442959",
+              "primary-fixed-dim": "#e6c364",
+              "on-secondary": "#402061",
+              "on-primary": "#3d2e00",
+              "error": "#ffb4ab"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 30s linear infinite;
+        }
+        .mandala-glow {
+            filter: drop-shadow(0 0 30px rgba(230, 195, 100, 0.3));
+        }
+        .star-field {
+            background-image: radial-gradient(circle, #d0c5b2 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body overflow-x-hidden selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<header class="bg-[#200436]/80 backdrop-blur-xl docked full-width top-0 sticky z-50 no-border bg-gradient-to-b from-[#1a0030] to-transparent shadow-[0px_20px_40px_rgba(13,0,24,0.6)]">
+<nav class="flex justify-between items-center w-full px-8 py-4 max-w-full">
+<div class="text-2xl font-bold text-[#e6c364] font-['Noto_Serif'] italic">
+                Trikaal
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#e6c364] border-b-2 border-[#e6c364] pb-1 font-['Noto_Serif'] text-[#d0c5b2] tracking-wide transition-all" href="#">Home</a>
+<a class="text-[#d0c5b2] hover:text-[#e6c364] transition-colors font-['Noto_Serif'] text-[#d0c5b2] tracking-wide hover:scale-105 transition-transform duration-300" href="#">Services</a>
+<a class="text-[#d0c5b2] hover:text-[#e6c364] transition-colors font-['Noto_Serif'] text-[#d0c5b2] tracking-wide hover:scale-105 transition-transform duration-300" href="#">About</a>
+<a class="text-[#d0c5b2] hover:text-[#e6c364] transition-colors font-['Noto_Serif'] text-[#d0c5b2] tracking-wide hover:scale-105 transition-transform duration-300" href="#">Contact</a>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-full font-semibold hover:scale-105 transition-transform duration-300 active:opacity-80 active:scale-95">
+                Book Consultation
+            </button>
+</nav>
+</header>
+<!-- Hero Section -->
+<main class="relative min-h-screen flex flex-col items-center justify-center pt-20 pb-32 px-6">
+<!-- Background Elements -->
+<div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+<div class="star-field absolute inset-0 opacity-20"></div>
+<!-- Mandala Background -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10 w-[120%] max-w-5xl aspect-square mandala-glow">
+<img alt="Sacred Mandala Pattern" class="w-full h-full object-contain rounded-full" data-alt="Golden glowing sacred geometry mandala pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFJYN4jxfcTBk4SfgJZKuEZPEA_SO3nSXdNbjvBVdRSLlUdYzl3WYw2ciK3qq628dmiaRJikXWgQ8_xufo50dAn5ETWA6BvwPmfztAIvnPIlTynhRfDwe2viTnNxwobdWHrwUM1tBPJZhITyBt1hAF8pi4tcAikUUWxpQn3p-0sY7v0hsbpN21KXiRGKczh_jvGvojlOoqlkFzYDFo3FtXg0WDW58imnX5L_KlrDk4inE5twrrCQEohQmxgLBG_vTj7V46ZH5uTJYd"/>
+</div>
+</div>
+<!-- Content Canvas -->
+<div class="relative z-10 text-center max-w-4xl mx-auto">
+<div class="mb-8 flex flex-col items-center">
+<span class="text-primary font-headline italic text-3xl md:text-4xl mb-6 block tracking-[0.2em]">
+                    ॐ असतो मा सद्गमय
+                </span>
+<div class="space-y-1 text-on-surface-variant/80 text-sm md:text-base font-light tracking-widest uppercase">
+<p>Asato mā sadgamaya</p>
+<p>Tamaso mā jyotirgamaya</p>
+<p>Mṛtyormā'mṛtaṃ gamaya</p>
+<p>Om śāntiḥ śāntiḥ śāntiḥ</p>
+</div>
+</div>
+<h1 class="text-primary font-headline text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-[1.1] tracking-tight">
+                A Modern Approach to <br/>
+<span class="italic font-normal">Vedic Science</span>
+</h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto mb-12 font-body font-light leading-relaxed">
+                Decode your destiny through the ancient wisdom of Jyotish &amp; Vastu Shastra. We bridge millennial-old cosmic calculations with the clarity required for the modern soul.
+            </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<button class="w-full sm:w-auto bg-gradient-to-br from-primary to-primary-container text-on-primary px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform duration-300 shadow-xl shadow-surface-container-lowest/50 active:scale-95">
+                    Explore Services
+                </button>
+<button class="w-full sm:w-auto px-10 py-4 rounded-full border border-primary/20 text-primary font-bold text-lg hover:bg-primary/10 hover:border-primary/40 transition-all duration-300 active:scale-95">
+                    Meet Our Consultant
+                </button>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 text-primary opacity-40 animate-bounce">
+<span class="material-symbols-outlined text-3xl">keyboard_double_arrow_down</span>
+</div>
+</main>
+<!-- Marquee Footer Strip -->
+<div class="w-full bg-surface-container-lowest py-6 overflow-hidden border-y border-primary/10 relative z-20">
+<div class="animate-marquee whitespace-nowrap flex items-center">
+<div class="flex items-center space-x-12 px-6">
+<span class="text-primary font-headline text-2xl tracking-widest uppercase">Astrology •</span>
+<span class="text-primary font-headline text-2xl tracking-widest uppercase">Vastu •</span>
+<span class="text-primary font-headline text-2xl tracking-widest uppercase">Trikaal Vastu •</span>
+<span class="text-primary font-headline text-2xl tracking-widest uppercase">Gemstone •</span>
+<span class="text-primary font-headline text-2xl tracking-widest uppercase">Numerology •</span>
+</div>
+<!-- Duplicated for seamless loop -->
+<div class="flex items-center space-x-12 px-6">
+<span class="text-primary font-headline text-2xl tracking-widest uppercase">Astrology •</span>
+<span class="text-primary font-headline text-2xl tracking-widest uppercase">Vastu •</span>
+<span class="text-primary font-headline text-2xl tracking-widest uppercase">Trikaal Vastu •</span>
+<span class="text-primary font-headline text-2xl tracking-widest uppercase">Gemstone •</span>
+<span class="text-primary font-headline text-2xl tracking-widest uppercase">Numerology •</span>
+</div>
+</div>
+</div>
+<!-- Main Content Section (Bento Grid Example) -->
+<section class="bg-surface py-32 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Large Card -->
+<div class="md:col-span-2 bg-surface-container-high p-12 rounded-lg border border-primary/5 hover:border-primary/20 transition-all duration-500 group">
+<div class="mb-8">
+<span class="text-primary text-sm font-bold tracking-[0.3em] uppercase mb-4 block">Personalized Insight</span>
+<h3 class="text-primary font-headline text-4xl mb-6">Birth Chart Analysis</h3>
+<p class="text-on-surface-variant/80 text-lg leading-relaxed">
+                            A comprehensive exploration of your Kundli, revealing the planetary influences that shape your career, health, and relationship cycles.
+                        </p>
+</div>
+<div class="aspect-video w-full rounded-md overflow-hidden bg-surface-container-lowest">
+<img alt="Ancient Astronomical Manuscript" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" data-alt="Detailed ancient Vedic astronomical chart manuscript with golden ink" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIBA7Cd_L9cVNBlA_drx934WV7AjKUqcLIbQO28aFdUgNZCg59C4lsQqWN1xX6ZL6wB4dPlOrNfCbG3Gv20Gs9oMN7xz731YFms9grV1PwYg2luqq6k7BcYKBIKjzG0kwLsmQqeXGAy0h2GGrgLlAGWgobWRyYHyrVPCNg4gDeCqlwunf8P-SQwfnD9NO0uqNTV1tX27eb6SQgjgLuAA1A1eonXrSIcRj48pM-JRC-77MSTIQRErLapzN9Ln72Lu18JD1sHpx-Jj6L"/>
+</div>
+</div>
+<!-- Vertical Card -->
+<div class="bg-surface-container-high p-8 rounded-lg border border-primary/5 flex flex-col justify-between hover:border-primary/20 transition-all duration-500">
+<div>
+<span class="material-symbols-outlined text-primary text-5xl mb-6" data-weight="fill">home_pin</span>
+<h3 class="text-primary font-headline text-3xl mb-4">Vastu Shastra</h3>
+<p class="text-on-surface-variant/70 mb-8">
+                            Harmonize your living and work spaces with the five elements to invite prosperity and peace.
+                        </p>
+</div>
+<div class="mt-auto">
+<ul class="space-y-4 text-on-surface-variant font-medium">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Spatial Alignment</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Energy Mapping</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Structural Balance</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#1a0030] full-width relative overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 w-full">
+<div>
+<div class="text-3xl font-bold text-[#e6c364] font-['Noto_Serif'] mb-4">Trikaal</div>
+<p class="font-['Manrope'] text-[#d0c5b2] text-sm leading-relaxed opacity-70">
+                    A celestial archive dedicated to preserving the sanctity of Vedic wisdom while making it accessible for the modern seeker.
+                </p>
+<div class="flex gap-4 mt-6">
+<a class="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-primary font-headline mb-6 text-lg">Services</h4>
+<ul class="space-y-3 font-['Manrope'] text-[#d0c5b2] text-sm">
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Natal Reading</a></li>
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Vastu Audit</a></li>
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Gemstone Recommendation</a></li>
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Astro-Numerology</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-primary font-headline mb-6 text-lg">Resources</h4>
+<ul class="space-y-3 font-['Manrope'] text-[#d0c5b2] text-sm">
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Privacy Policy</a></li>
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Terms of Service</a></li>
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Consultation Guide</a></li>
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Vedic Wisdom</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-primary font-headline mb-6 text-lg">Weekly Oracle</h4>
+<p class="text-[#d0c5b2]/70 text-xs mb-4">Subscribe to receive planetary transits updates.</p>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none rounded-full py-3 px-6 text-on-surface text-sm focus:ring-1 focus:ring-primary transition-all" placeholder="Your Email" type="email"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 bg-primary text-on-primary p-1.5 rounded-full hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="w-full text-center py-8 border-t border-primary/5">
+<p class="font-['Manrope'] text-[#d0c5b2] text-xs opacity-50">
+                © 2024 Trikaal Celestial Archive. All Sacred Rights Reserved.
+            </p>
+</div>
+</footer>
+</body></html>

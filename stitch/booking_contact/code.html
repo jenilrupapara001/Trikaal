@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trikaal - Book Your Consultation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#f0c040",
+              "primary": "#e6c364",
+              "outline-variant": "#4d4637",
+              "on-tertiary-fixed-variant": "#5a4400",
+              "on-secondary-fixed": "#2a064b",
+              "on-surface-variant": "#d0c5b2",
+              "surface-container-highest": "#442959",
+              "on-tertiary-container": "#513d00",
+              "surface-dim": "#200436",
+              "on-tertiary": "#3e2e00",
+              "secondary-fixed": "#efdbff",
+              "on-background": "#f2daff",
+              "on-surface": "#f2daff",
+              "on-primary-fixed-variant": "#584400",
+              "on-primary-fixed": "#241a00",
+              "surface-container-high": "#381e4e",
+              "on-primary-container": "#503d00",
+              "surface-container-lowest": "#1a0030",
+              "inverse-on-surface": "#3f2455",
+              "surface-tint": "#e6c364",
+              "inverse-primary": "#755b00",
+              "surface-container-low": "#290e3e",
+              "secondary": "#dcb8ff",
+              "on-tertiary-fixed": "#251a00",
+              "primary-container": "#c9a84c",
+              "outline": "#99907e",
+              "error-container": "#93000a",
+              "tertiary-container": "#d2a525",
+              "primary-fixed": "#ffe08f",
+              "tertiary-fixed": "#ffdf97",
+              "tertiary-fixed-dim": "#f0c040",
+              "on-secondary-container": "#cfa9f4",
+              "inverse-surface": "#f2daff",
+              "surface-container": "#2d1342",
+              "background": "#200436",
+              "secondary-container": "#5a3a7c",
+              "on-error": "#690005",
+              "secondary-fixed-dim": "#dcb8ff",
+              "surface": "#200436",
+              "surface-bright": "#482d5e",
+              "on-error-container": "#ffdad6",
+              "on-secondary-fixed-variant": "#583879",
+              "surface-variant": "#442959",
+              "primary-fixed-dim": "#e6c364",
+              "on-secondary": "#402061",
+              "on-primary": "#3d2e00",
+              "error": "#ffb4ab"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #200436;
+            color: #f2daff;
+            font-family: 'Manrope', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(68, 41, 89, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .shimmer-gold {
+            background: linear-gradient(135deg, #e6c364 0%, #c9a84c 100%);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-[#200436]/80 backdrop-blur-xl docked full-width top-0 sticky z-50 no-border bg-gradient-to-b from-[#1a0030] to-transparent shadow-[0px_20px_40px_rgba(13,0,24,0.6)] flex justify-between items-center w-full px-8 py-4 max-w-full">
+<div class="text-2xl font-bold text-[#e6c364] font-['Noto_Serif'] italic">Trikaal</div>
+<div class="hidden md:flex space-x-8 font-['Noto_Serif'] text-[#d0c5b2] tracking-wide items-center">
+<a class="text-[#d0c5b2] hover:text-[#e6c364] transition-colors hover:scale-105 transition-transform duration-300" href="#">Home</a>
+<a class="text-[#d0c5b2] hover:text-[#e6c364] transition-colors hover:scale-105 transition-transform duration-300" href="#">Services</a>
+<a class="text-[#d0c5b2] hover:text-[#e6c364] transition-colors hover:scale-105 transition-transform duration-300" href="#">About</a>
+<a class="text-[#e6c364] border-b-2 border-[#e6c364] pb-1 hover:scale-105 transition-transform duration-300" href="#">Contact</a>
+</div>
+<button class="shimmer-gold text-on-primary px-6 py-2 rounded-full font-bold hover:scale-105 transition-all active:opacity-80 active:scale-95">
+            Book Consultation
+        </button>
+</nav>
+<main class="flex-grow flex flex-col md:flex-row w-full overflow-hidden relative">
+<!-- Background Decorative Element -->
+<div class="absolute inset-0 pointer-events-none opacity-10 overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-screen scale-150 rotate-12" data-alt="Faint glowing zodiac wheel background pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuBpYATstx3vGi61aeZQCa0LZ-qVqR4dXlU-G3i46wGTEMxgvX_MociXvbbYFbi96X8WHvzZzQoBD0XIe6S6vvBpOCYvAkMu6aVAU8YjdKM9BlXETJom-LIvhd9p1T5Uzy6CAiWbk7WovyXn7NFHeTav95BUcoe1WjqHcIfJDE8fQ60bEUOqzQcijb95iMzN7WSOo7Pv6kJQ74ml-DCVg5vuALzSaI7UYkkR--dtAPdR9WbuwZ-6xKskeVLLhjSR-wDj5UKKZVLD8T"/>
+</div>
+<!-- Left Info Panel -->
+<section class="w-full md:w-5/12 p-8 md:p-16 flex flex-col justify-center z-10 bg-surface-container-lowest/40">
+<div class="max-w-md">
+<span class="text-primary font-label text-xs tracking-[0.2em] uppercase mb-4 block">Celestial Alignment</span>
+<h1 class="text-5xl md:text-6xl font-headline font-bold text-primary mb-8 leading-tight">Book Your Consultation</h1>
+<div class="space-y-10">
+<div>
+<h3 class="text-on-surface font-headline text-xl mb-4 italic">Preparation Requirements</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">To ensure precise astrological mapping, please have the following details ready before your session:</p>
+<ul class="grid grid-cols-2 gap-4">
+<li class="flex items-center space-x-3 text-on-surface-variant group">
+<span class="material-symbols-outlined text-primary text-lg">calendar_today</span>
+<span class="font-label text-sm group-hover:text-primary transition-colors">Birthdate</span>
+</li>
+<li class="flex items-center space-x-3 text-on-surface-variant group">
+<span class="material-symbols-outlined text-primary text-lg">schedule</span>
+<span class="font-label text-sm group-hover:text-primary transition-colors">Exact Time</span>
+</li>
+<li class="flex items-center space-x-3 text-on-surface-variant group">
+<span class="material-symbols-outlined text-primary text-lg">location_on</span>
+<span class="font-label text-sm group-hover:text-primary transition-colors">Birth City</span>
+</li>
+<li class="flex items-center space-x-3 text-on-surface-variant group">
+<span class="material-symbols-outlined text-primary text-lg">person</span>
+<span class="font-label text-sm group-hover:text-primary transition-colors">Gender</span>
+</li>
+<li class="flex items-center space-x-3 text-on-surface-variant group">
+<span class="material-symbols-outlined text-primary text-lg">auto_awesome</span>
+<span class="font-label text-sm group-hover:text-primary transition-colors">Service Type</span>
+</li>
+<li class="flex items-center space-x-3 text-on-surface-variant group">
+<span class="material-symbols-outlined text-primary text-lg">videocam</span>
+<span class="font-label text-sm group-hover:text-primary transition-colors">Mode</span>
+</li>
+</ul>
+</div>
+<div class="pt-8 border-t border-outline-variant/20">
+<h3 class="text-on-surface font-headline text-xl mb-4 italic">Archive Operations</h3>
+<div class="space-y-4">
+<div class="flex items-start space-x-4">
+<span class="material-symbols-outlined text-tertiary mt-1">language</span>
+<div>
+<p class="text-on-surface font-semibold text-sm">Languages</p>
+<p class="text-on-surface-variant text-sm">English, Sanskrit, Hindi, Marathi</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<span class="material-symbols-outlined text-tertiary mt-1">event_available</span>
+<div>
+<p class="text-on-surface font-semibold text-sm">Availability</p>
+<p class="text-on-surface-variant text-sm">Mon — Sat: 10:00 AM - 08:00 PM IST</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Form Panel -->
+<section class="w-full md:w-7/12 p-8 md:p-16 glass-panel z-10 relative overflow-y-auto">
+<div class="max-w-2xl mx-auto">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-label text-on-surface-variant uppercase tracking-widest px-1">Full Name</label>
+<input class="w-full bg-surface-container-low border border-primary/20 rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Arjun Sharma" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-label text-on-surface-variant uppercase tracking-widest px-1">Email Address</label>
+<input class="w-full bg-surface-container-low border border-primary/20 rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="arjun@cosmos.com" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-label text-on-surface-variant uppercase tracking-widest px-1">Phone / WhatsApp</label>
+<input class="w-full bg-surface-container-low border border-primary/20 rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="+91 98XXX XXXXX" type="tel"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-label text-on-surface-variant uppercase tracking-widest px-1">Urgency Level</label>
+<div class="flex bg-surface-container-low p-1 rounded-lg border border-primary/10">
+<button class="flex-1 py-2 text-xs font-bold rounded-md bg-primary text-on-primary" type="button">Regular</button>
+<button class="flex-1 py-2 text-xs font-bold rounded-md text-on-surface-variant hover:text-primary transition-colors" type="button">Urgent</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-label text-on-surface-variant uppercase tracking-widest px-1">Service Type</label>
+<select class="w-full bg-surface-container-low border border-primary/20 rounded-lg px-4 py-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all appearance-none">
+<option>Natal Chart Analysis</option>
+<option>Career &amp; Wealth Path</option>
+<option>Relationship Compatibility</option>
+<option>Annual Varshphal</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-label text-on-surface-variant uppercase tracking-widest px-1">Consultation Mode</label>
+<select class="w-full bg-surface-container-low border border-primary/20 rounded-lg px-4 py-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all appearance-none">
+<option>Video Call (Google Meet)</option>
+<option>Audio Consultation</option>
+<option>In-Person (Archive Studio)</option>
+<option>Written Report Only</option>
+</select>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-label text-on-surface-variant uppercase tracking-widest px-1">Your Cosmic Inquiry</label>
+<textarea class="w-full bg-surface-container-low border border-primary/20 rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none" placeholder="Briefly describe your current situation or specific questions..." rows="4"></textarea>
+</div>
+<button class="w-full shimmer-gold text-on-primary py-4 rounded-full font-bold text-lg hover:scale-[1.02] active:scale-95 transition-all shadow-lg shadow-primary/20 flex items-center justify-center space-x-3" type="submit">
+<span class="material-symbols-outlined">auto_fix_high</span>
+<span>Request Consultation</span>
+</button>
+</form>
+<div class="mt-8 text-center">
+<p class="text-on-surface-variant/60 text-xs font-label italic">
+                        By submitting this request, you agree to the sacred confidentiality of the Trikaal Archive.
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1a0030] full-width relative overflow-hidden tonal-shift from surface-container-lowest grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 w-full border-t border-outline-variant/10">
+<div class="col-span-1 md:col-span-1">
+<div class="text-3xl font-bold text-[#e6c364] font-['Noto_Serif'] mb-4">Trikaal</div>
+<p class="font-['Manrope'] text-[#d0c5b2] text-sm leading-relaxed max-w-xs">Decoding the celestial patterns to illuminate your earthly journey with Vedic precision.</p>
+</div>
+<div>
+<h4 class="text-[#e6c364] font-bold mb-6 font-headline">Wisdom</h4>
+<ul class="space-y-4 font-['Manrope'] text-[#d0c5b2] text-sm">
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Vedic Wisdom</a></li>
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Consultation Guide</a></li>
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Planetary States</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-[#e6c364] font-bold mb-6 font-headline">Sacred Archive</h4>
+<ul class="space-y-4 font-['Manrope'] text-[#d0c5b2] text-sm">
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Privacy Policy</a></li>
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Terms of Service</a></li>
+<li><a class="text-[#d0c5b2]/70 hover:text-[#e6c364] hover:translate-x-1 transition-transform duration-200 block" href="#">Legal Notice</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-[#e6c364] font-bold mb-6 font-headline">Connect</h4>
+<div class="flex space-x-4 mb-6">
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-[#e6c364] hover:shadow-[0_0_15px_#e6c364] transition-all" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-[#e6c364] hover:shadow-[0_0_15px_#e6c364] transition-all" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-[#e6c364] hover:shadow-[0_0_15px_#e6c364] transition-all" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+</div>
+<p class="font-['Manrope'] text-[#d0c5b2] text-sm">© 2024 Trikaal Celestial Archive. All Sacred Rights Reserved.</p>
+</div>
+</footer>
+</body></html>
